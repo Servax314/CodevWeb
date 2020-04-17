@@ -20,7 +20,7 @@ let handleRequest = (request, response) => {
     response.writeHead(200, {
         'Content-Type': 'text/html'
     });
-    fs.readFile('./src/login.html', null, function (error, data) {
+    fs.readFile('./src/accueil.html', null, function (error, data) {
         if (error) {
             response.writeHead(404);
             response.write('Whoops! File not found!');
@@ -32,4 +32,4 @@ let handleRequest = (request, response) => {
     });
 };
 
-http.createServer(handleRequest).listen(8000);
+http.createServer(handleRequest).listen(3000);
