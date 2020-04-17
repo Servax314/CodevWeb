@@ -24,33 +24,25 @@
     <form action="page2.html" method="get">
         <fieldset>
             <legend>Ou voulez vous allez ?</legend>
-            <label>Départ</label>
+            <label>Lieu de départ :</label>
             <select id="depart">
                 <option value="brest">Brest</option>
                 <option value="paris">Paris</option>
             </select>
             <br />
-            <label>Arrivée</label>
+            <label>Arrivée :</label>
             <select id="arrivee">
-                <option value="brest">Brest</option>
-                <option value="paris">Paris</option>
+               <option value="paris">Paris</option>
+               <option value="brest">Brest</option>
             </select>
             <br />
-            <label>Es-tu une machine ?</label>
-            <select id="machine">
-                <option value="Yes">Oui</option>
-                <option value="No">Non</option>
-            </select>
-
-            <br />
-            <label class="styleformulaire"> Adresse mail :</label>
-            <input id="mdp" type="password" />
+            <label> Départ à :</label>
+            <input id="heure" type="text" />
 
                 <br />
             <label>Dites quelque chose sur vous</label>
             <textarea id="apropos" style="height:50px"></textarea>
         </fieldset>
-        <input type="submit" value="Envoyer le formulaire" onclick="return VerifierFormulaire()" />
     </form>
 
 
