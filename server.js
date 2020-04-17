@@ -16,19 +16,11 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+const app = new express();
+
 let handleRequest = (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-    fs.readFile('./src/accueil.html', null, function (error, data) {
-        if (error) {
-            response.writeHead(404);
-            response.write('Whoops! File not found!');
-            reponse.write(error);
-        } else {
-            response.write(data);
-        }
-        response.end();
+    app.get('/', function(req,resp) {
+        reponse.sendFile('./src/accueil.html')
     });
 };
 
