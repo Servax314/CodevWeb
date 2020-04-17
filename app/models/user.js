@@ -15,9 +15,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-var User = mongoose.model('User', UserSchema);
-module.exports = User;
-
 //hashing
 User.Schema.pre('save',function(next){
     var user = this;
@@ -29,3 +26,6 @@ User.Schema.pre('save',function(next){
       next();
     })
 });
+
+var User = mongoose.model('User', UserSchema);
+module.exports = User;
