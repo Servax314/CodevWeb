@@ -1,10 +1,49 @@
 }
 
-.contentBox{
-    background-color: #007CC3;
+.window{
+    background-color: black;
     padding: 10px 0 40px;
     border-radius: 3px;
-    margin: 0 auto;
-    width: 100px; 
+    margin-left: auto;
+  	margin-right: auto;
+  	width: 300px;
+  	justify-content: center;
+
+
+}
+
+.contentBox{
+    background-color: rgb(214,214,214);
+    padding: 10px 0 40px;
+    border-radius: 5px;
+    margin-left: auto;
+  	margin-right: auto;
+  	margin-top: auto;
+  	margin-bottom: auto;
+  	height: 200px;
+  	width: 300px;
+  	justify-content: center;
+
+
+}
+
+.form{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.button{
+	width: 50px;
+
+}
+
+.body{
+	background-color: blue;
+
 
 }
