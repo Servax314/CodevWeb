@@ -4,16 +4,47 @@
 <head>
     <meta charset="utf-8" />
     <title>Bienvenue sur Machina</title>
-    <link rel="stylesheet" href="../public/accueil/css/accueil.css">
+    <link rel="stylesheet" href="../public/accueil/css/accueil.css"> <!--link with the CSS page-->
 </head>
 
 
 <body>
-     <h2 style="color:rgb(104, 50, 205);text-align:center;">Machina !!</h2>
+    <div> <!--Logo of the page-->
+    <img src="../machina_logo.png" alt="Logo machina"  height="300" width="300" title="Je te l'accorde, ce logo est monstreux ! Il a été fait par une machine aussi ! En même temps, il n'y a que des machines ici !">
+    </div>
 
-    <p>
-    <img src="../machina_logo.png" alt="Logo machina"  title="Je te l'accorde, ce logo est monstreux ! Il a été fait par une machine aussi ! En même temps, il n'y a que des machines ici !">
-</p>
+    <!--Title-->
+    <h1>Machina !!</h1>
+    
+    <!--formulary for the requested travel-->
+    <form action="page2.html" method="get">
+        <fieldset>
+            <legend>Where do you want to go ?</legend>
+            <label>From :</label>
+            <select id="from" name="from">
+                <option value="brest">Brest</option>
+                <option value="paris">Paris</option>
+            </select>
+            <br />
+            <label>To :</label>
+            <select id="to" name=to>
+               <option value="paris">Paris</option>
+               <option value="brest">Brest</option>
+            </select>
+            <br />
+            <label>Outbound:</label>
+            <input id="outbound" name="outbound" type="text" />
+
+                <br />
+            <label>At :</label>
+            <input id="at" name="at" type="text" />
+        </fieldset>
+    </form>
+
+    <!--Button of research-->
+    <input type="submit" value="Search" onclick="return VerifierFormulaire()" />
+    
+    <!--Description-->
     <p>Machina le logiciel de Machine Learning fait par des machines, pour des machines !! <br /> Si tu viens sur ce site c'est que : </p>
     <ul>
         <li>Tu es une machine </li>
@@ -21,29 +52,6 @@
         <li>Tu veux baiser la SCNF</li>
     </ul>
 
-    <form action="page2.html" method="get">
-        <fieldset>
-            <legend>Ou voulez vous allez ?</legend>
-            <label>Lieu de départ :</label>
-            <select id="depart">
-                <option value="brest">Brest</option>
-                <option value="paris">Paris</option>
-            </select>
-            <br />
-            <label>Arrivée :</label>
-            <select id="arrivee">
-               <option value="paris">Paris</option>
-               <option value="brest">Brest</option>
-            </select>
-            <br />
-            <label> Départ à :</label>
-            <input id="heure" type="text" />
-
-                <br />
-            <label>Dites quelque chose sur vous</label>
-            <textarea id="apropos" style="height:50px"></textarea>
-        </fieldset>
-    </form>
-
-
+    <!--<p><img src="../machina_logo.png" class="dessous" alt="Image flottante" height="300" width="300" /> </p>-->
 </body>
+</html>

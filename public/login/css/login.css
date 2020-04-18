@@ -1,10 +1,55 @@
 }
 
+
+.window{
+   	height:100%;
+   	width: 100%;
+
+
+}
+
 .contentBox{
-    background-color: #007CC3;
+    background-color: rgb(210,210,210);
     padding: 10px 0 40px;
-    border-radius: 3px;
-    margin: 0 auto;
-    width: 100px; 
+    border-radius: 5px;
+    margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 18%;
+  	height: 220px;
+  	width: 300px;
+  	justify-content: center;
+
+
+}
+
+.form{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.logo{
+
+	height: 35%;
+	width: 50%;
+
+}
+
+.LoginButton{
+	width: 50px;
+	height: 25px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.body{
+	background-color: blue;
+
 
 }

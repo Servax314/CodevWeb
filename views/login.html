@@ -5,20 +5,25 @@
         <meta charset="utf-8" />
         <title>Machina</title>
         <link rel="stylesheet" href="../public/login/css/login.css">
+        <script type="../public/login/js/login.js"></script>
     </head>
 
 
     <body>
-    	<div class="contentBox">
-    		<img src="../machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"/>
-    		<label for="username">Username:</label>
-        	<input id="username" class="LoginField" name="username" type="text" autocapitalize="off" autocorrect="off"/></br>
-    		<label for="username">Password:</label>
-       	 	<input id="Password" class="PasswordField" name="password" type="Password" autocapitalize="off" autocorrect="off"/></br>
+    <div class="window">
+    	
+        <div class="contentBox">
+    		<img class="logo" src="../machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
+    		<div class="form">
+                <label for="username">Username :</label>
+        	    <input id="username" class="LoginField" name="username" type="text" autocapitalize="off" autocorrect="off"/></br>
+    		    <label for="username"> Password : </label>
+       	 	    <input id="password" class="PasswordField" name="password" type="Password" autocapitalize="off" autocorrect="off"/></br>
 
-        	<input type="submit" class="LoginButton" value="Log In">
-
-        	<p> You are a new Machina ? Please sign up here</p>
+        	    <input type="submit" class="LoginButton" value="Log In">
+            </div>
+                <p class="RegisterBox"> You are a new Machina ? Please sign up <a href=# onclick=return register()>here</a> </p>
         </div>
+    </div>
     </body>
 </html>
