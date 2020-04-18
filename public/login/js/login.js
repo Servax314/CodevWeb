@@ -9,7 +9,7 @@ function register(){
                +'<input id="Username" name="Username" type="text" autocapitalize="off" autocorrect="off"/></br>'
                + '<label> Password : </label>'
                + '<input id="Password" name="Password" type="Password" autocapitalize="off" autocorrect="off"/></br>'
-               + '<label> Password : </label>'
+               + '<label>Repeat Password : </label>'
                + '<input id="Password" name="Password" type="Password" autocapitalize="off" autocorrect="off"/></br>'
                +'<input id="registerButton" name="registerButton" type="submit" value="Register">'
                + '</form>'
