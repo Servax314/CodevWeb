@@ -1,7 +1,10 @@
 /* On travaille sur la balise body, donc sur TOUTE la page */
 body
 {
-    background-color: rgba(255,155,65,0.1); /* Le fond de la page sera noir */
+    /*background-image:url('../image/machina_logo.png');
+    background-size: 1500px 1000px; 
+    background-repeat: no-repeat;*/
+    background-color: whitesmoke;/* Le fond de la page sera noir */
     color: black; /* Le texte de la page sera blanc */
 }
 
@@ -24,7 +27,6 @@ h1
 
 }
 
-
 /*paragraph*/
 p
 {
@@ -32,11 +34,14 @@ p
     color: rgb(81, 81, 199);
     opacity: 0.6;
     text-align: left;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-left: 2px double black;
+    border-right: 2px double black;
+    border-top: 2px double black;
+    border-bottom: 2px double black;
     border-radius: 10px;
+    box-shadow: 6px 6px 6px black;
+    filter: alpha(opacity=10);
+    
 }
 
 /*put an image below a text*/

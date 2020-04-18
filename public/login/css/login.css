@@ -1,17 +1,30 @@
+body{
+	background-image:url('../images/background.png');
+	background-repeat: no-repeat;
+	background-size: 1500px 1000px; 
+
+
+
+	}
+
+#Username{
+	margin-right: 15px;
+
+
+
 }
 
-
-.window{
-   	height:100%;
-   	width: 100%;
-
+#logo{
+	margin-top: 1px;
+	height: 50%;
+	width: 50%;
 
 }
 
 .loginBox{
     background-color: rgb(210,210,210);
     padding: 10px 0 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-left: auto;
   	margin-right: auto;
   	margin-top: 18%;
@@ -22,11 +35,11 @@
 
 
 }
-
 .form{
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 4%;
+
   margin-top: auto;
+  margin-bottom: auto;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -34,19 +47,33 @@
 
 }
 
-.logo{
-
-	height: 35%;
-	width: 50%;
+.field{
+	height: 9px;
+	width:146px;
+	margin-right: 7%;
 
 }
 
-.loginButton{
+
+
+#loginButton{
 	width: 50px;
 	height: 25px;
 	margin-left: 35%;
 
+}
 
+#registerButton{
+	width: 55px;
+	height: 25px;
+	margin-left: 35%;
+
+}
+
+#registerText{
+	margin-top: 10%;
+	margin-right: 2%;
+	text-align: center;
 
 }
 
