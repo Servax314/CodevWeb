@@ -1,4 +1,27 @@
+/*image*/
+div
+{
+    font-size: 1em;
+    color: rgb(81, 81, 199);
+    text-align: center;
+}
+
+/*title*/
+h1
+{
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+/*paragraph*/
 p
 {
-    color: blue;
+    font-size: 1em;
+    color: rgb(81, 81, 199);
+    text-align: left;
 }
