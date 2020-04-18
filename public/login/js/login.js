@@ -16,6 +16,4 @@ function register(){
                +'</div>'
     obj.innerHTML = x;
 
-}
-
 
