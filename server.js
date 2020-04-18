@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv')
+}
+
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -8,7 +12,8 @@ const session = require('express-session')
 const initializePassport = require('./passport-config')
 initializePassport(
   passport,
-  username => users.find(user => user.username === username)
+  username => users.find(user => user.username === username),
+  id => users.find(user => user.id === id)
 )
 
 const users = []
@@ -17,32 +22,38 @@ app.set('view-engine', 'jade')
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+app.get('/', checkAuthenticated, (req,res) => {
+  res.render('accueil.jade')
+})
+
+app.get('/login', checkNotAuthenticated, (req,res) => {
+  res.render('login.jade')
+})
+
+app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true
 }))
 
-
-app.get('/', (req,res) => {
-  res.render('login.jade')
-})
-
-app.get('/login', (req,res) => {
-  res.render('login.jade')
-})
-
-app.post('/login', (req,res) => {
-
-})
-
-app.get('/register', (req,res) => {
+app.get('/register', checkNotAuthenticated, (req,res) => {
   res.render('register.jade')
 })
 
-app.post('/register', async(req,res) => {
+app.post('/register', checkNotAuthenticated, async(req,res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password,10)
     users.push({
       id: Date.now().toString(),
-      usename: req.body.username,
+      username: req.body.username,
       email: req.body.mailAddress,
       password: hashedPassword
     })
@@ -52,5 +63,25 @@ app.post('/register', async(req,res) => {
   }
   console.log(users)
 })
+
+app.get('/accueil', (req,res) => {
+  res.render('register.jade')
+})
+
+//middle-ware
+function checkAuthenticated(req,res,next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+  res.redirect('/login')
+
+}
+
+function checkNotAuthenticated(req,res,next) {
+  if(req.isAuthenticated()) {
+    return res.redirect('/')
+  }
+  next()
+}
 
 app.listen(3000)
