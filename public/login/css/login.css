@@ -34,19 +34,24 @@
 
 }
 
-.logo{
+#logo{
 
 	height: 35%;
 	width: 50%;
 
 }
 
-.loginButton{
+#loginButton{
 	width: 50px;
 	height: 25px;
 	margin-left: 35%;
 
+}
 
+#registerButton{
+	width: 55px;
+	height: 25px;
+	margin-left: 35%;
 
 }
 
