@@ -15,5 +15,6 @@ function register(){
                + '</form>'
                +'</div>'
     obj.innerHTML = x;
+}
 
 
