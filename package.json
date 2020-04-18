@@ -1,0 +1,40 @@
+{
+  "name": "codevweb",
+  "version": "1.0.0",
+  "description": "files.html go in src every other ressources needed for the front-end go in public/nameOfThePage/...",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bull": "^3.13.0",
+    "bull-board": "^0.7.0",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "html": "^1.0.0",
+    "jade": "^1.11.0",
+    "log4js": "^6.2.0",
+    "mongoose": "^5.9.9",
+    "morgan": "^1.10.0",
+    "npm": "^6.14.4",
+    "rotating-file-stream": "^2.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Servax314/CodevWeb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Servax314/CodevWeb/issues"
+  },
+  "homepage": "https://github.com/Servax314/CodevWeb#readme"
+}
