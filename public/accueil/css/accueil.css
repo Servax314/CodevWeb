@@ -1,8 +1,10 @@
 /* On travaille sur la balise body, donc sur TOUTE la page */
 body
 {
-    background: rgba(255,155,65,0.1);
-    background-image:url("machina_logo.png"); /* Le fond de la page sera noir */
+    /*background-image:url('../image/machina_logo.png');
+    background-size: 1500px 1000px; 
+    background-repeat: no-repeat;*/
+    background-color: whitesmoke;/* Le fond de la page sera noir */
     color: black; /* Le texte de la page sera blanc */
 }
 
