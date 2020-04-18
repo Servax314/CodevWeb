@@ -9,10 +9,11 @@
 
     <body>
     <div class="window">
-    	
+
         <div class="registerBox">
             <img class="logo" src="../machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
             <div class="form">
+              <form action = "/register" method = "POST">
                 <label for="mailAddress">Mail address :</label>
                 <input id="mailAddress" class="RegisterField" name="mailAddress" type="text" autocapitalize="off" autocorrect="off"/></br>
 
@@ -27,6 +28,7 @@
 
 
                 <input type="submit" class="RegisterButton" value="Register">
+              </form>
             </div>
         </div>
 
