@@ -8,8 +8,9 @@
 
 }
 
-.loginBox{
-    background-color: rgb(210,210,210);
+
+.registerBox{
+	background-color: rgb(210,210,210);
     padding: 10px 0 40px;
     border-radius: 5px;
     margin-left: auto;
@@ -18,7 +19,8 @@
   	height: 220px;
   	width: 300px;
   	justify-content: center;
- }
+
+}
 
 
 }
@@ -41,12 +43,11 @@
 
 }
 
-.loginButton{
+.RegisterButton{
 	width: 50px;
 	height: 25px;
-	margin-left: 35%;
-
-
+	margin-left: auto;
+	margin-right: auto;
 
 }
 
