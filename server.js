@@ -26,10 +26,18 @@ app.get('/register', (req,res) => {
 
 app.post('/register', async(req,res) => {
   try {
-    const hashedPassword = bcrypt.hash
+    const hashedPassword = await bcrypt.hash(req.body.password,10)
+    users.push({
+      id: Date.now().toString(),
+      usename: req.body.username,
+      email: req.body.email,
+      password: hashedPassword
+    })
+    res.redirect('/login')
   }catch{
-
+    res.redirect('/register')
   }
+  console.log(users)
 })
 
 app.listen(3000)
