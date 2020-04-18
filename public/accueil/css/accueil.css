@@ -1,32 +1,51 @@
+/* On travaille sur la balise body, donc sur TOUTE la page */
+body
+{
+    background-color: rgba(255,155,65,0.1); /* Le fond de la page sera noir */
+    color: black; /* Le texte de la page sera blanc */
+}
+
 /*image*/
 div
 {
-    font-size: 1em;
-    color: rgb(81, 81, 199);
     text-align: center;
 }
 
 /*title*/
 h1
 {
-    font-size: 3em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: oblique;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
+    font-size: 3em;  /*size of the title*/
+    color: rgb(228, 72, 44); /*color of the title*/
+    font-family: Georgia, 'Times New Roman', Times, serif; /*policy of the title*/
+    font-style: oblique; /*titre en italique*/
+    font-weight: bold; /*titre en gras*/
+    text-decoration: none; /*décoration : souligner, barrer,...*/
+    text-align: center; /*title alignement*/
 
 }
+
 
 /*paragraph*/
 p
 {
     font-size: 1em;
     color: rgb(81, 81, 199);
+    opacity: 0.6;
     text-align: left;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 10px;
 }
 
-.imageflottante
+/*put an image below a text*/
+.dessous
+{
+    clear: both;
+}
+
+/*.imageflottante
 {
     float: left;
 }
@@ -34,4 +53,4 @@ p
 .imageflottante2
 {
     float: right;
-}
+}*/
