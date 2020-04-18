@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
+const passport = require('passport')
 
+const initializePassport = require('./passport-config')
+initializePassport(passport)
 
 const users = []
 
@@ -30,7 +33,7 @@ app.post('/register', async(req,res) => {
     users.push({
       id: Date.now().toString(),
       usename: req.body.username,
-      email: req.body.email,
+      email: req.body.mailAddress,
       password: hashedPassword
     })
     res.redirect('/login')
