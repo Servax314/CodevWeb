@@ -2,14 +2,24 @@ const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
 const passport = require('passport')
+const flash = require('express-flash')
+const session = require('express-session')
 
 const initializePassport = require('./passport-config')
-initializePassport(passport)
+initializePassport(
+  passport,
+  username => users.find(user => user.username === username)
+)
 
 const users = []
 
 app.set('view-engine', 'jade')
 app.use(express.urlencoded({extended: false}))
+app.use(flash())
+app.use(session({
+  secret: process.env.SESSION_SECRET
+}))
+
 
 app.get('/', (req,res) => {
   res.render('login.jade')
