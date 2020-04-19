@@ -85,6 +85,21 @@ h2
 #conteneur
 {
     display: flex;
-    flex-direction: column;
+	flex-direction: column-reverse;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    float: right; /*l'image flotte à droite*/
+    border-left: 2px double black; /*bordure à gauche*/
+    border-right: 2px double black; /*bordure à droite*/
+    border-top: 2px double black; /*bordure au dessus*/
+    border-bottom: 2px double black; /*bordure en dessous*/
+    border-radius: 10px; /*bordure à gauche*/
+    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
+    width: 250px; /*largeur de la boxe*/
+    height: 300px; /*hauteur de la boxe*/
+    padding: 12px; /*marge intérieure de la boxe*/
+    margin: 20px; /*marge extérieure de la boxe*/
 
 }
