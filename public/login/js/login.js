@@ -1,27 +1,47 @@
-let i = 0
-let registerHtml = '<div id="registerForm" class="form">'
-           +'<form action="/login" method="POST">'
-           +'<label>Mail address :</label>'
-           +'<input class="field" id="mailAddress" name="mailAddress" type="text" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label>Login :</label>'
-           +'<input class="field" id="Username" name="Username" type="text" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label> Password : </label>'
-           +'<input class="field" id="Password" name="Password" type="Password" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label>Repeat Password : </label>'
-           +'<input class="field" id="Password" name="Password" type="Password" autocapitalize="off" autocorrect="off"/></br>'
-           +'<input id="registerButton" name="registerButton" type="submit" value="Register">'
-           +'</form>'
-           +'</div>'
+let data = {};
+let headers = new Headers();
+headers.append('Content-Type', 'application/json');
+let fetchData = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: headers
+    };
 
-  let loginHtml = ''
-
-function updateHtml(){
-  i +=1;
-  if {
-    var obj = document.getElementById("loginForm");
-    obj.innerHTML = registerHtml;
+function funcFetch() {
+  if(i) {
+    url = '/register';
+    let data = {
+      email: document.getElementById("mailAddress").value,
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    }
+    fetch(url,fetchData)
+      .then(function(resp){
+        console.log(fetchData);
+        console.log(resp);
+        if(resp.status == 200) {
+          console.log("well registered");
+          switchHtml();
+        }else{
+          console.log("error on register");
+        }
+      })
   }else{
-    var obj = document.getElementById("registerForm");
-    obj.innerHTML = loginHtml;
+    url = '/login';
+    let data = {
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    }
+    fetch(url,fetchData)
+      .then(function(resp){
+        console.log(fetchData);
+        console.log(resp);
+        if(resp.status == 200) {
+          console.log("welcome");
+        }else{
+          console.log("error on login");
+        }
+      })
+
   }
 }
