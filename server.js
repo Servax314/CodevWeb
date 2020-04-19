@@ -45,7 +45,7 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 }))
 
 app.get('/register', checkNotAuthenticated, (req,res) => {
-  res.render('register.jade')
+  res.render('login.jade')
 })
 
 app.post('/register', checkNotAuthenticated, async(req,res) => {
@@ -57,8 +57,10 @@ app.post('/register', checkNotAuthenticated, async(req,res) => {
       email: req.body.mailAddress,
       password: hashedPassword
     })
+    res.status = 200
     res.redirect('/login')
   }catch{
+    res.status = 404
     res.redirect('/register')
   }
   console.log(users)
@@ -74,7 +76,6 @@ function checkAuthenticated(req,res,next) {
     return next()
   }
   res.redirect('/login')
-
 }
 
 function checkNotAuthenticated(req,res,next) {

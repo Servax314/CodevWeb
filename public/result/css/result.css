@@ -1,0 +1,38 @@
+#researchBox{
+    position: absolute;
+    background-color: rgb(210,210,210);
+    padding: 10px 0 40px;
+    border-radius: 8px;
+    left: 5px;
+    top: 5px;
+    margin-bottom: 1px;
+    width: 80%;
+    height: 
+ }
+
+#resultBox{
+    position: absolute;
+    background-color: rgb(210,210,210);
+    padding: 10px 0 40px;
+    border-radius: 8px;
+    left: 5px;
+    bottom: 5px;
+    height: 400px;
+    width: 80%;
+ }
+
+#dateResultBox{
+    background-color: rgb(100,100,100);
+    padding: 10px 0 40px;
+    border-radius: 5px;
+    margin-right: 9px;
+    margin-left:  9px;
+    margin-top: 2px;
+    height: 40%;
+
+
+
+}
+
+
+
