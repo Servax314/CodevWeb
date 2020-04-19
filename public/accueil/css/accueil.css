@@ -28,9 +28,10 @@ h1
 }
 
 /*paragraph*/
-p
+h2
 {
     font-size: 1em;
+    font-weight: normal;
     color: rgb(81, 81, 199);
     opacity: 0.6;
     text-align: left;
@@ -50,12 +51,14 @@ p
     clear: both;
 }
 
-/*.imageflottante
+/*classe permettant de faire flotter un texte ou image à gauche*/
+.floatingleft
 {
     float: left;
 }
 
-.imageflottante2
+/*classe permettant de faire flotter un texte ou image à droite*/
+.floatingright
 {
     float: right;
-}*/
+}
