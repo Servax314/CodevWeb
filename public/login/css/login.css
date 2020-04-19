@@ -7,47 +7,41 @@
 }
 
 #logo{
-	margin-top: 1px;
+	right: 40px;
 	height: 50%;
 	width: 50%;
+
 
 }
 
 .loginBox{
+	position: absolute;
     background-color: rgb(210,210,210);
-    padding: 10px 0 40px;
+    padding: 10px 10px 10px 30px;
     border-radius: 8px;
-    margin-left: auto;
-  	margin-right: auto;
-  	height: 220px;
-  	width: 300px;
-  	justify-content: center;
- }
+    margin-left:  40%;
+    margin-right: 40%;
+  	bottom: 40%;
+  	height: 250px;
+  	width: 250px;
+
+}
 
 
 }
-.form{
-  margin-left: 4%;
 
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
 
 .field{
-	height: 9px;
-	width:146px;
-	margin-right: 7%;
+	position: relative;
+	left : 5px;
 
 }
 
 
 
 #loginButton{
+	background-color: white;
+	border-radius: 6px;
 	width: 50px;
 	height: 25px;
 	margin-left: 35%;
@@ -63,8 +57,10 @@
 
 #registerText{
 	margin-top: 10%;
-	margin-right: 2%;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
+	position: center;
 
 }
 
