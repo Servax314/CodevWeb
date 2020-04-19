@@ -32,3 +32,50 @@ function login(){
     obj2.innerHTML = x2;
 }
 
+
+var PARAMS = {
+  particles : {
+    speed: {
+    max : 0.5,
+    min : -0.5
+    },
+    size : {
+      max : 1.1,
+      min : 0.1
+    },
+    style : {
+      color : 'black',
+      opacity : 1
+    }
+  },
+  lines : {
+    enable : true,
+    color : 'black',
+    opacity : .01,
+    distance : 80
+  },
+  globale : {
+    particlesAtStart : 150,
+    limits : 50,
+    particleMax : 150,
+    mode : 'normal',
+    retina : false
+  },
+  events : {
+    onclick : {
+      nb : 5
+    },
+    newcreated : {
+      time : 500,
+      nb : 4
+    }
+  },
+  mobile : {
+    speed : 2,
+    size : 2,
+    nb : 2,
+    line_o : 2,
+    line_d : 2
+  }
+}
+
