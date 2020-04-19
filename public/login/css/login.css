@@ -1,11 +1,3 @@
-body{
-	background-image:url('../images/background.png');
-	background-repeat: no-repeat;
-	background-size: 1500px 1000px; 
-
-
-
-	}
 
 #Username{
 	margin-right: 15px;
@@ -76,4 +68,6 @@ body{
 	text-align: center;
 
 }
+
+
 
