@@ -12,10 +12,7 @@ body{
   font:normal 75% Arial, Helvetica, sans-serif;
 }
 
-canvas{
-  display:block;
 
-}
 
 
 
@@ -23,6 +20,6 @@ canvas{
 	position: relative;
 	height : 100%;
 	width:100%;
-  	background: radial-gradient(ellipse at center, cyan, blue)
+  	background: radial-gradient(ellipse at top right, white, black)
 
 }

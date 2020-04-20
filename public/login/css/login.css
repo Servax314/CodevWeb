@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+	font-family: 'Open Sans Condensed', arial, sans; 
 
 }
 
@@ -75,8 +76,30 @@ body{
 	font-family: 'Open Sans Condensed', arial, sans;
 	height: 45px;
 	width: 150px;
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+	
 	margin: auto;
 }
+
+.form-style-8 input[type=text], 
+.form-style-8 input[type=password]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px red blue;
+	padding: 3px;							
+	-webkit-transition: all 0.10s ease-in-out;
+	-moz-transition: all 0.10s ease-in-out;
+	-ms-transition: all 0.10s ease-in-out;
+	-o-transition: all 0.10s ease-in-out;
+	outline: none;	
+}
+
+.form-style-8 input[type=text]:focus, 
+.form-style-8 input[type=password]:focus{
+	-moz-box-shadow: 0 0 8px red;
+	-webkit-box-shadow: 0 0 8px red;
+	box-shadow: 0 0 8px red;
+	border: 1px solid black;
+}
+
+
