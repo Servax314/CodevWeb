@@ -38,3 +38,5 @@ Run the script Results.py, this will print the score of your model and a confusi
 
 4 - How do I make my own prediction ?
 In the files Prediction.py, please refer the path of the image you want to predict and the name of your model, then you can run the script and wait for your result ! 
+
+Finally, the folder Confusion_matrix and the file score.txt give you the score of the model that are already known
