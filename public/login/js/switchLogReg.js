@@ -26,10 +26,12 @@ function switchHtml(){
     i = false;
     var obj = document.getElementById("loginForm");
     obj.innerHTML = registerHtml;
+    console.log('login to register');
 
   }else{
     var obj = document.getElementById("registerForm");
     obj.innerHTML = loginHtml;
     i=true;
+    console.log('register to login');
   }
 };

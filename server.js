@@ -18,7 +18,7 @@ initializePassport(
 
 const users = []
 
-app.set('view-engine', 'jade')
+
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
@@ -58,10 +58,10 @@ app.post('/register', checkNotAuthenticated, async(req,res) => {
       password: hashedPassword
     })
     res.status = 200
-    res.redirect('/login')
+    //res.redirect('/login')
   }catch{
     res.status = 404
-    res.redirect('/register')
+    //res.redirect('/register')
   }
   console.log(users)
 })
