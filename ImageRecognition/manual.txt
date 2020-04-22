@@ -1,0 +1,40 @@
+Here is a guide to run the python script included in this folder
+
+PREREQUISITE
+First you will be asked to pip install the following packages:
+
+scikit-learn
+numpy
+matplotlib
+PIL
+opencv
+pickle
+random
+pickle
+joblib
+os
+time
+
+Some are already install in your python environment
+
+1 - How to download and apply preprocessing on your database ?
+To download the database Chars74k, please click on this link :
+http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/, download the English 127.9MB database
+
+Then you can run the files ConvertData.py, this action will create two object files :
+- the training database
+- the testing database
+
+ConvertData allow you to change the parameters of your preprocessing method
+
+2 - How to create my first ML model ?
+You can create your ML model running the python script : model.py
+After that, the model is created and hosted in the current folder
+
+You can change the parameters of your models
+
+3 - How do I know my model's score ?
+Run the script Results.py, this will print the score of your model and a confusion matrix
+
+4 - How do I make my own prediction ?
+In the files Prediction.py, please refer the path of the image you want to predict and the name of your model, then you can run the script and wait for your result ! 
