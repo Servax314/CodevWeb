@@ -36,11 +36,6 @@ function funcFetch() {
       .then(function(resp){
         console.log(fetchData);
         console.log(resp);
-        if(resp.status == 200) {
-          console.log("welcome");
-        }else{
-          console.log("error on login");
-        }
       })
 
   }
