@@ -8,11 +8,7 @@ body
     color: black; /* Le texte de la page sera blanc */
 }
 
-/*image*/
-div
-{
-    text-align: center;
-}
+
 
 /*title*/
 h1
@@ -35,14 +31,14 @@ h2
     color: rgb(81, 81, 199);
     opacity: 0.6;
     text-align: left;
-    border-left: 2px double black;
-    border-right: 2px double black;
-    border-top: 2px double black;
-    border-bottom: 2px double black;
-    border-radius: 10px;
-    box-shadow: 6px 6px 6px black;
     filter: alpha(opacity=10);
     
+}
+
+/*Position image*/
+.image
+{
+    text-align: center;
 }
 
 /*put an image below a text*/
@@ -54,11 +50,56 @@ h2
 /*classe permettant de faire flotter un texte ou image à gauche*/
 .floatingleft
 {
-    float: left;
+    float: left; /*l'image flotte à gauche*/
+    border-left: 2px double black; /*bordure à gauche*/
+    border-right: 2px double black; /*bordure à droite*/
+    border-top: 2px double black; /*bordure au dessus*/
+    border-bottom: 2px double black; /*bordure en dessous*/
+    border-radius: 10px; /*bordure à gauche*/
+    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
+    width: 250px; /*largeur de la boxe*/
+    height: 300px; /*hauteur de la boxe*/
+    padding: 12px; /*marge intérieure de la boxe*/
+    margin: 20px; /*marge extérieure de la boxe*/
+    overflow: hidden; /*permet de cacher le texte si ce dernier dépasse de la boxe*/
+    word-wrap: break-word; /*coupe les mots trops longs qui dépassent du cadre*/
 }
 
 /*classe permettant de faire flotter un texte ou image à droite*/
 .floatingright
 {
-    float: right;
+    float: right; /*l'image flotte à droite*/
+    border-left: 2px double black; /*bordure à gauche*/
+    border-right: 2px double black; /*bordure à droite*/
+    border-top: 2px double black; /*bordure au dessus*/
+    border-bottom: 2px double black; /*bordure en dessous*/
+    border-radius: 10px; /*bordure à gauche*/
+    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
+    width: 250px; /*largeur de la boxe*/
+    height: 300px; /*hauteur de la boxe*/
+    padding: 12px; /*marge intérieure de la boxe*/
+    margin: 20px; /*marge extérieure de la boxe*/
+}
+
+
+#conteneur
+{
+    display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    float: right; /*l'image flotte à droite*/
+    border-left: 2px double black; /*bordure à gauche*/
+    border-right: 2px double black; /*bordure à droite*/
+    border-top: 2px double black; /*bordure au dessus*/
+    border-bottom: 2px double black; /*bordure en dessous*/
+    border-radius: 10px; /*bordure à gauche*/
+    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
+    width: 250px; /*largeur de la boxe*/
+    height: 300px; /*hauteur de la boxe*/
+    padding: 12px; /*marge intérieure de la boxe*/
+    margin: 20px; /*marge extérieure de la boxe*/
+
 }

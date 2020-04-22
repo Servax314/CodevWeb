@@ -1,25 +1,19 @@
 let i = true;
 
 
-let registerHtml = '<div id="registerForm" class="form">'
-           +'<label>Mail address :</label>'
-           +'<input class="field" id="mailAddress" name="mailAddress" type="text" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label>Login :</label>'
-           +'<input class="field" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label> Password : </label>'
-           +'<input class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
-           +'<label>Repeat Password : </label>'
-           +'<input class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
+let registerHtml = '<div id="registerForm" class="form"><div class="form-style-8">'
+           +'<input placeholder="Mail address" class="field" id="mailAddress" name="mailAddress" type="text" autocapitalize="off" autocorrect="off"/></br>'
+           +'<input placeholder="Username" class="field" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br>'
+           +'<input placeholder="Password " class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
+           +'<input placeholder="Repeat Password" class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
            +'<input id="registerButton" name="registerButton" type="submit" value="Register">'
-           +'</div>';
+           +'</div></div>';
 
-  let loginHtml = '<div id="loginForm" class="form">'
-             +     '<label  >Username :</label>'
-              +    '<input class="field" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br></br>'
-           +   '<label > Password : </label>'
-             +   '<input class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
+  let loginHtml = '<div id="loginForm" class="form"><div class="form-style-8">'
+              +    '<input placeholder="Username " class="field" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br></br>'
+             +   '<input placeholder="Password " class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>'
              +   '<input id="loginButton" name="loginButton" type="submit" value="Log In">'
-          +'</div>';
+          +'</div></div>';
 
 function switchHtml(){
   if (i){

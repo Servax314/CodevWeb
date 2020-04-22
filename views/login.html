@@ -4,31 +4,29 @@
     <head>
         <meta charset="utf-8" />
         <title>Machina</title>
-        <link rel="stylesheet" href="../public/login/css/login.css">
-        <script src="../public/login/js/switchLogReg.js"></script>
-        <script src="../public/login/js/login.js"></script>
-            <!-- scripts -->
+        <link rel="stylesheet" href="/login/css/login.css">
+        <link rel="stylesheet" href="/login/css/style.css">
+        <script src="/login/js/switchLogReg.js"></script>
+        <script src="/login/js/login.js"></script>
+
 
     </head>
 
 
     <body id="particles-js" >
+
         <div id ="loginBox" class="loginBox">
-    		<img id="logo" src="../machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
-    		<div id="loginForm" class="form">
-            <label  >Username :</label>
-              <input class="field" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br></br>
-    		        <label > Password : </label>
-       	 	        <input class="field" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>
-        	        <button id="loginButton" name="loginButton" onclick = 'funcFetch()'>Log In</button>
-                <p id="registerText"> You are a new Machina ? </br> Please sign up <a href='' onclick= 'switchHtml()' >here</a> </p>
-
-            </div>
+                <img id="logo" src="/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
+                <div id="loginForm" class="form">
+                    <div class="form-style-8">
+                    <input placeholder="Username " class="fieldlogin1" id="username" name="username" type="text" autocapitalize="off" autocorrect="off"/></br></br>
+       	 	          <input placeholder="Password " class="fieldlogin2" id="password" name="password" type="password" autocapitalize="off" autocorrect="off"/></br>
+        	          <button id="loginButton" name="loginButton" onclick = 'funcFetch()'>Log In</button>
+                    </div>
+                    <p id="registerText"> You are a new Machina ? Please sign up <a href='/register'>here</a> </p>
+             </div>
         </div>
-
-    <!-- particles.js container -->
-        <script src="../public/login/js/particles.js"></script>
-        <script src="../public/login/js/app.js"></script>
-
+        <script src="/login/js/particles.js"></script>
+        <script src="/login/js/app.js"></script>
     </body>
 </html>
