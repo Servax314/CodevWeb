@@ -4,18 +4,20 @@ body
     /*background-image:url('../image/machina_logo.png');
     background-size: 1500px 1000px; 
     background-repeat: no-repeat;*/
-    background-color: whitesmoke;/* Le fond de la page sera noir */
-    color: black; /* Le texte de la page sera blanc */
+}
+
+header p
+{
+    text-align: center;
 }
 
 
-
-/*title*/
-h1
+/*/*title*/
+section h1
 {
     font-size: 3em;  /*size of the title*/
-    color: rgb(228, 72, 44); /*color of the title*/
-    font-family: Georgia, 'Times New Roman', Times, serif; /*policy of the title*/
+    color: rgb(12, 4, 3); /*color of the title*/
+    font-family: Arial, Helvetica, sans-serif; /*policy of the title*/
     font-style: oblique; /*titre en italique*/
     font-weight: bold; /*titre en gras*/
     text-decoration: none; /*décoration : souligner, barrer,...*/
@@ -23,29 +25,61 @@ h1
 
 }
 
-/*paragraph*/
-h2
+section p
 {
-    font-size: 1em;
-    font-weight: normal;
-    color: rgb(81, 81, 199);
-    opacity: 0.6;
-    text-align: left;
-    filter: alpha(opacity=10);
-    
+    font-size: 1em;  /*size of the title*/
+    color: rgb(12, 4, 3); /*color of the title*/
+    font-family: Arial, Helvetica, sans-serif; /*policy of the title*/
+    font-style: oblique; /*titre en italique*/
+    font-weight: bold; /*titre en gras*/
+    text-decoration: none; /*décoration : souligner, barrer,...*/
+    text-align: center; /*title alignement*/
+
 }
 
-/*Position image*/
-.image
+.loginBox
 {
+	margin-left: 35%;
+	left:-200px;
+	top:30vh;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 300px;
+	width:800px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px;
+  	box-shadow: 0px 0px 50px rgba(255,255,255,0.8);
+  	background: white;
+    opacity: 0.85;
+}
+
+.bouton_rouge
+{
+    height: 50px;
+    width: 500px;
+    position: absolute;
+    right: 150px;
+    bottom: 100px;
+    background: #760001;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
     text-align: center;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
 }
 
-/*put an image below a text*/
-.dessous
-{
-    clear: both;
-}
+
+    
+
+
+
+
 
 /*classe permettant de faire flotter un texte ou image à gauche*/
 .floatingleft
@@ -103,3 +137,8 @@ h2
     margin: 20px; /*marge extérieure de la boxe*/
 
 }
+
+
+
+
+    
