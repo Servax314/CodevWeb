@@ -1,42 +1,27 @@
-let data = {};
-let headers = new Headers();
-headers.append('Content-Type', 'application/json');
-let fetchData = {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: headers
-    };
+
 
 function funcFetch() {
-  if(i) {
-    url = '/register';
-    let data = {
-      email: document.getElementById("mailAddress").value,
-      username: document.getElementById("username").value,
-      password: document.getElementById("password").value
-    }
-    fetch(url,fetchData)
-      .then(function(resp){
-        console.log(fetchData);
-        console.log(resp);
-        if(resp.status == 200) {
-          console.log("well registered");
-          switchHtml();
-        }else{
-          console.log("error on register");
-        }
-      })
-  }else{
-    url = '/login';
-    let data = {
-      username: document.getElementById("username").value,
-      password: document.getElementById("password").value
-    }
-    fetch(url,fetchData)
-      .then(function(resp){
-        console.log(fetchData);
-        console.log(resp);
-      })
-
+  url = '/login';
+  let data = {
+    username: document.getElementById("username").value,
+    password: document.getElementById("password").value
   }
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: headers
+      };
+  fetch(url,fetchData)
+    .then(function(res){
+      console.log(fetchData);
+      console.log(res);
+      if(res.status == 200) {
+        window.location.replace(res.url);
+      }else{
+        window.location.replace(res.url);
+        ///////////////////////////////////////////;//alert(res.error_msg);
+      }
+    })
 }

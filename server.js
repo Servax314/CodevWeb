@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const flash = require('express-flash-messages');
-const session = require('express-session')
+const session = require('express-session');
+const passport = require('passport');
 
 const app = express();
+
+require('./config/passport')(passport);
 
 //db config
 const db = require('./config/keys.js').MongoURI;
@@ -25,6 +28,10 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+//passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Connect flash
 app.use(flash());
