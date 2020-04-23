@@ -72,6 +72,10 @@ section p
     color: white;
     text-decoration: none;
     font-weight: 900;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 
