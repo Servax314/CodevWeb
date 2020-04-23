@@ -39,6 +39,16 @@ p,input,button{
 
 }
 
+#Bouton2{
+	background: url('flèche-droite.png');
+	width:20px;
+	height:20px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+
+}
+
 #logo{
 
 	height: 40%;
@@ -73,14 +83,23 @@ p,input,button{
 
 
 #loginButton{
+	
+	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)}
 
 
+
+
+}
+
+#loginButton : hover{
+	background-position: right center; 
 
 }
 
 
 #registerText{
 	margin-top: 40px;
+	color: rgba(120,120,120);
 
 }
 
