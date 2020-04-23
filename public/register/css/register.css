@@ -1,3 +1,14 @@
+p,input,button{
+	font-family: "Prompt";
+	font-size:15px;
+
+}
+
+@font-face {
+	font-family: "Prompt";
+	src: url('/police/prompt/Prompt-Regular.ttf');
+}
+
 .loginBox{
 	margin-left: 50%;
 	left:-200px;
@@ -16,6 +27,26 @@
   	opacity: 0.85;
 
 	
+}
+
+#Bouton{
+	background: url('flèche-droite.png');
+	width:20px;
+	height:20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+
+}
+
+#Bouton2{
+	background: url('flèche-droite.png');
+	width:20px;
+	height:20px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+
 }
 
 #logo{
@@ -47,7 +78,7 @@
 }
 
 .fieldlogin{
-	margin:5px;
+	margin:10px;
 }
 
 
@@ -81,11 +112,17 @@
 	outline: none;	
 }
 
+.form-style-8 input[type=password]{
+	margin-bottom: 25px;
+}
+
 .form-style-8 input[type=text]:focus, 
 .form-style-8 input[type=password]:focus{
 	-moz-box-shadow: 0 0 8px cyan;
 	-webkit-box-shadow: 0 0 8px black;
-	box-shadow: 0 0 8px #faed27;
+	box-shadow: 0 0 8px grey;
+	border: 2px solid grey;
 }
+
 
 
