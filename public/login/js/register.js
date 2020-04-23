@@ -20,9 +20,15 @@ function postRegister() {
   };
 
   fetch(url,fetchData)
-    .then(function(resp){
+    .then(function(res){
       console.log(fetchData);
-      console.log(resp);
-    });
-    //.catch(err => console.log(err));
+      console.log(res);
+      if(res.status == 200) {
+        window.location.replace(res.url);
+      }else{
+        window.location.replace(res.url);
+        ///////////////////////////////////////////;//alert(res.error_msg);
+      }
+    })
+    .catch(err => console.log(err));
 };
