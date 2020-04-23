@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "bull": "^3.13.0",
     "bull-board": "^0.7.0",
     "connect-mongo": "^3.2.0",
@@ -12,6 +13,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
+    "express-flash-messages": "^0.1.1",
     "express-session": "^1.17.1",
     "html": "^1.0.0",
     "jade": "^1.11.0",
@@ -22,7 +24,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "rotating-file-stream": "^2.0.2",
-    "secret": "^1.0.2"
+    "secret": "^1.0.2",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
