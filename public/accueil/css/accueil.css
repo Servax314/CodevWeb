@@ -58,11 +58,9 @@ section p
 
 .bouton_rouge
 {
-    height: 50px;
-    width: 500px;
+    height: 50px; /*hauteur boxe*/
+    width: 500px; /*largeur boxe*/
     position: absolute;
-    right: 150px;
-    bottom: 100px;
     background: #760001;
     border: 1px solid #760001;
     border-radius: 5px;
@@ -71,11 +69,10 @@ section p
     padding: 3px 8px 0px 8px;
     color: white;
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 900; /*gras*/
     top: 60%;
     left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 
