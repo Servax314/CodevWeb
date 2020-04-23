@@ -18,10 +18,11 @@ function funcFetch() {
       console.log(fetchData);
       console.log(res);
       if(res.status == 200) {
+        alert('Logging in, welcome to the moula side.');
         window.location.replace(res.url);
       }else{
+        alert('Failed to log in, wrong password/username.');
         window.location.replace(res.url);
-        ///////////////////////////////////////////;//alert(res.error_msg);
       }
     })
 }
