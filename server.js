@@ -50,8 +50,8 @@ app.use('/',require('./routes/register.js'));
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    console.log(err.message);
-    req.flash('error', err.message);
+    console.log(err);
+
 
     res.json({
         message: err.message,

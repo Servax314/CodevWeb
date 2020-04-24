@@ -4,10 +4,12 @@
   "description": "files.html go in src every other ressources needed for the front-end go in public/nameOfThePage/...",
   "main": "server.js",
   "dependencies": {
+    "acorn": "^7.1.1",
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "bull": "^3.13.0",
     "bull-board": "^0.7.0",
+    "clean-css": "^4.2.3",
     "connect-mongo": "^3.2.0",
     "constantinople": "^4.0.1",
     "cors": "^2.8.5",

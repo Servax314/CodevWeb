@@ -24,10 +24,14 @@ function postRegister() {
       console.log(fetchData);
       console.log(res);
       if(res.status == 200) {
+        alert('User registered !')
         window.location.replace(res.url);
       }else{
-        window.location.replace(res.url);
-        ///////////////////////////////////////////;//alert(res.error_msg);
+        res.json()
+          .then(function(obj) {
+            alert(obj.message);
+            window.location.replace(res.url);
+          });
       }
     })
     .catch(err => console.log(err));

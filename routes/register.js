@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const {checkNotAuthenticated} = require('../config/auth.js');
+
 
 //User model
 const User = require('../models/User.js');
 
 //register page
-router.get('/register', (req,res) => res.sendFile('register.html', {root: './views'}))
+router.get('/register', checkNotAuthenticated, (req,res) => res.sendFile('register.html', {root: './views'}))
 
 //register handler
 router.post('/register', function(req,res,next) {
