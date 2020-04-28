@@ -39,7 +39,12 @@ class CustomModel(tf.keras.Model):
 		
 		#Insert LSTM Layers (RNN Layers)
 
-		self.rnn_layer1 = tf.keras.layers.LSTM(_,return_sequences = True, stateful = True, name = 'rnn_layer1')
-		self.rnn_layer2 = tf.keras.layers.LSTM(_,return_sequences = True, stateful = True, name = 'rnn_layer2')
+		lstm_numbers=[256,256]
 
-		def call(self,_)
+		rnn_layer1 = tf.keras.layers.LSTM(lstm_numbers[0],return_sequences = True, stateful = True, name = 'rnn_layer1')
+		rnn_layer2 = tf.keras.layers.LSTM(lstm_numbers[1],return_sequences = True, stateful = True, name = 'rnn_layer2')
+		
+		#Build Bidirectional layer
+		self.bidirectional_layer = tf.keras.layers.Bidirectional(rnn_layer1,rnn_layer2,)
+
+	def call(self,_)
