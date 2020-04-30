@@ -16,11 +16,12 @@ const db = require('./config/keys.js').MongoURI;
 
 //connect to Mongo
 let gfs;
-const conn = mongoose.createConnection(db, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  });
+const conn = mongoose.createConnection(db, {useNewUrlParser:true, useUnifiedTopology: true });
 conn.once('open', () => {
   // Init stream
   gfs = Grid(conn.db, mongoose.mongo);
   gfs.collection('uploads');
+  console.log('mongo connected');
 });
 
 // mongoose.connect(db, {useNewUrlParser:true, useUnifiedTopology: true})

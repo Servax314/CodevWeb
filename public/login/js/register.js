@@ -36,3 +36,4 @@ function postRegister() {
     })
     .catch(err => console.log(err));
 };
+ 
