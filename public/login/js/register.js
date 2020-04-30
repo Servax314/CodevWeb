@@ -23,7 +23,7 @@ function postRegister() {
     .then(function(res){
       console.log(fetchData);
       console.log(res);
-      if(res.url == 200) {
+      if(res.status == 200) {
         alert('User registered !')
         window.location.replace(res.url);
       }else{
