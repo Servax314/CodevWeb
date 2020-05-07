@@ -82,26 +82,47 @@ p,input,button{
 }
 
 
-#loginButton{
-	
-	background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)}
-
-
-
-
-}
-
-#loginButton : hover{
-	background-position: right center; 
-
-}
-
 
 #registerText{
 	margin-top: 40px;
 	color: rgba(120,120,120);
 
 }
+
+button,
+      button::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      button {
+      background: none;
+      border: 4px solid #000;
+      border-radius: 10px;
+      color: #000;
+      text-transform: uppercase;
+      }
+      button::before,
+      button::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      button:hover {
+      background-color: #000; 
+      color: #29f2e4;
+      }
+      
+      #loginButton::after {
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      #loginButton:hover:after {
+      }
+
 
 
 
