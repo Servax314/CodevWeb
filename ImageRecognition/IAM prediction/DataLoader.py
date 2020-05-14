@@ -26,7 +26,7 @@ DataLoader.batchSize -> batch size of the DataLoader
 DataLoader.imgsize -> size of the image saved in the DataLoader
 DataLoader.maxTextLen -> max text length
 Dataloader.dataAugmentation ->
-DataLoader.samples -> sample saved in the Dataloader (list of tuple, array of img and text)
+DataLoader.samples -> current samples saved in the Dataloader (list of tuple, array of img and text)
 DataLoader.trainSamples -> array of the train sample
 DataLoader.validationSamples -> array of the validation sample
 DataLoader.trainWords -> array of the training words
@@ -39,20 +39,19 @@ DataLoader.numTrainSamplesPerEpoch -> num train samples per epoch
 
 class Sample:
 	"sample from the dataset"
-	def __init__(self, gtText, filePath):
-		self.gtText = gtText
+	def __init__(self, text, filePath):
+		self.text = text
 		self.filePath = filePath
 
 
 class Batch:
 	"batch containing images and ground truth texts"
-	def __init__(self, gtTexts, imgs):
+	def __init__(self, texts, imgs):
 		self.imgs = np.stack(imgs, axis=0)
-		self.gtTexts = gtTexts
+		self.texts = texts
 
 
-class DataLoader:
-	"loads data which corresponds to IAM format, see: http://www.fki.inf.unibe.ch/databases/iam-handwriting-database" 
+class DataLoader: 
 
 	def __init__(self, filePath, batchSize, imgSize, maxTextLen):
 		"loader for dataset at given location, preprocess images and text according to parameters"
@@ -64,103 +63,70 @@ class DataLoader:
 		self.batchSize = batchSize
 		self.imgSize = imgSize
 		self.samples = []
+		self.filepath = filePath
 
-		f=open(filePath+'words.txt')
-		chars = set()
-		bad_samples = []
-		bad_samples_reference = ['a01-117-05-02.png', 'r06-022-03-05.png']
-		for line in f:
-			# ignore comment line
+		training_test=open(filePath+'training_test.txt')
+		validation_test = open(filePath+'validation_test.txt')
+		training_chars = set()
+		validation_chars = set()
+		badSamples = []
+
+		
+		for line in training_test:
+			# ignore the empty line or the commented line
 			if not line or line[0]=='#':
 				continue
 
 			lineSplit = line.strip().split(' ')
-			assert len(lineSplit) >= 9
+			fileName = filePath+'training_test'+lineSplit[0]
 
-			# filename: part1-part2-part3 --> part1/part1-part2/part1-part2-part3.png
-			fileNameSplit = lineSplit[0].split('-')
-			fileName = filePath + 'words/' + fileNameSplit[0] + '/' + fileNameSplit[0] + '-' + fileNameSplit[1] + '/' + lineSplit[0] + '.png'
-
-			# GT text are columns starting at 9
-			gtText = self.truncateLabel(' '.join(lineSplit[8:]), maxTextLen)
-			chars = chars.union(set(list(gtText)))
+			#text are words
+			text = self.truncateLabel(lineSplit[1], maxTextLen)
+			training_chars = training_chars.union(set(list(text)))
 
 			# check if image is not empty
 			if not os.path.getsize(fileName):
-				bad_samples.append(lineSplit[0] + '.png')
+				badSamples.append(fileName)
 				continue
 
 			# put sample into list
-			self.samples.append(Sample(gtText, fileName))
+			self.trainSamples.append(Sample(text, fileName))
+			self.trainWords = [x.text for x in self.trainSamples]
+		
+		for line in validation_test:
+			#ignore the empty line or the commented line
+			if not line or line[0]=='#':
+				continue
+				
+			lineSplit = line.strip().split(' ')
+			fileName = filePath+'validation_test'+lineSplit[0]
 
-		# some images in the IAM dataset are known to be damaged, don't show warning for them
-		if set(bad_samples) != set(bad_samples_reference):
-			print("Warning, damaged images found:", bad_samples)
-			print("Damaged images expected:", bad_samples_reference)
+			#text are words
+			text = self.truncateLabel(lineSplit[1],maxTextLen)
+			validation_chars = validation_chars.union(set(list(text)))
 
-		# split into training and validation set: 95% - 5%
-		splitIdx = int(0.95 * len(self.samples))
-		self.trainSamples = self.samples[:splitIdx]
-		self.validationSamples = self.samples[splitIdx:]
+			#check if image is not empty
+			if not os.path.getsize(fileName):
+				badSamples.append(fileName)
+				continue
 
-		# put words into lists
-		self.trainWords = [x.gtText for x in self.trainSamples]
-		self.validationWords = [x.gtText for x in self.validationSamples]
-
-		# number of randomly chosen samples per epoch for training
-		self.numTrainSamplesPerEpoch = 25000
-
-		# start with train set
-		self.trainSet()
-
-		# list of all chars in dataset
-		self.charList = sorted(list(chars))
+			self.validationSamples.append(Sample(text, fileName))
+			self.validationWords = [x.text for x in self.validationSamples]
+		
+		if badSamples!=[]:
+			print("Warning, damaged images found : ", badSamples)
+		
 
 
+
+
+		
 	def truncateLabel(self, text, maxTextLen):
-		# ctc_loss can't compute loss if it cannot find a mapping between text label and input
-		# labels. Repeat letters cost double because of the blank symbol needing to be inserted.
-		# If a too-long label is provided, ctc_loss returns an infinite gradient
 		cost = 0
 		for i in range(len(text)):
-			if i != 0 and text[i] == text[i-1]:
-				cost += 2
+			if i!=0 and text[i] == text[i-1]:
+				cost+=2
 			else:
-				cost += 1
-			if cost > maxTextLen:
-				return text[:i]
+				cost+=1
+			if cost > maxTextLen[:i]
 		return text
-
-
-	def trainSet(self):
-		"switch to randomly chosen subset of training set"
-		self.dataAugmentation = True
-		self.currIdx = 0
-		random.shuffle(self.trainSamples)
-		self.samples = self.trainSamples[:self.numTrainSamplesPerEpoch]
-
-
-	def validationSet(self):
-		"switch to validation set"
-		self.dataAugmentation = False
-		self.currIdx = 0
-		self.samples = self.validationSamples
-
-
-	def getIteratorInfo(self):
-		"current batch index and overall number of batches"
-		return (self.currIdx // self.batchSize + 1, len(self.samples) // self.batchSize)
-
-
-	def hasNext(self):
-		"iterator"
-		return self.currIdx + self.batchSize <= len(self.samples)
-
-
-	def getNext(self):
-		"iterator"
-		batchRange = range(self.currIdx, self.currIdx + self.batchSize)
-		gtTexts = [self.samples[i].gtText for i in batchRange]
-		imgs = [preprocess(cv2.imread(self.samples[i].filePath, cv2.IMREAD_GRAYSCALE), self.imgSize, self.dataAugmentation) for i in batchRange]
-		self.currIdx += self.batchSize
-		return Batch(gtTexts, imgs)
