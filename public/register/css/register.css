@@ -22,9 +22,7 @@ p,input,button{
 	width:400px;
     padding: 10px 10px 10px 10px;
     border-radius: 8px;
-  	box-shadow: 0px 0px 50px rgba(255,255,255,0.8);
   	background: white;
-  	opacity: 0.85;
 
 	
 }
@@ -82,17 +80,48 @@ p,input,button{
 }
 
 
-#loginButton{
-
-
-
-}
-
 
 #registerText{
 	margin-top: 40px;
+	color: rgba(120,120,120);
 
 }
+
+button,
+      button::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      button {
+      background: none;
+      border: 2px solid #000;
+      border-radius: 4px;
+      color: #000;
+      text-transform: uppercase;
+      }
+      button::before,
+      button::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      button:hover {
+      color: #000; 
+      border: 2px solid #E87D3C;
+      background-color: #E87D3C;
+      }
+      
+      #loginButton::after {
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      #loginButton:hover:after {
+      }
+
 
 
 
@@ -112,17 +141,14 @@ p,input,button{
 	outline: none;	
 }
 
-.form-style-8 input[type=password]{
-	margin-bottom: 25px;
+#lastpassword{
+	margin-bottom: 18px;
 }
 
 .form-style-8 input[type=text]:focus, 
 .form-style-8 input[type=password]:focus{
-	-moz-box-shadow: 0 0 8px cyan;
-	-webkit-box-shadow: 0 0 8px black;
-	box-shadow: 0 0 8px grey;
-	border: 2px solid grey;
+	-moz-box-shadow: 0 0 8px #E87D3C;
+	-webkit-box-shadow: 0 0 8px #E87D3C;
+	box-shadow: 0 0 8px #E87D3C;
+	border: 2px solid #E87D3C;
 }
-
-
-
