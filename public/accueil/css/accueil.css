@@ -12,7 +12,7 @@ header p
 }
 
 
-/*/*title*/
+/*title*/
 section h1
 {
     font-size: 3em;  /*size of the title*/
@@ -56,6 +56,7 @@ section p
     opacity: 0.85;
 }
 
+/*design du bouton rouge*/
 .bouton_rouge
 {
     height: 50px; /*hauteur boxe*/
@@ -65,14 +66,64 @@ section p
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
-    text-align: center;
     padding: 3px 8px 0px 8px;
     color: white;
     text-decoration: none;
     font-weight: 900; /*gras*/
-    top: 60%;
+    display: flex;      /* placer le texte au milieu de la flex box*/
+    justify-content: center;
+    align-items: center;
+    top: 60%;  /*pour placer la boxe div au sein de body*/
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.bouton_rouge:hover
+{
+    height: 50px; /*hauteur boxe*/
+    width: 500px; /*largeur boxe*/
+    position: absolute;
+    background: rgb(44, 10, 10);
+    border: 1px solid rgb(44, 10, 10);
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900; /*gras*/
+    display: flex;      /* placer le texte au milieu de la flex box*/
+    justify-content: center;
+    align-items: center;
+    top: 60%;  /*pour placer la boxe div au sein de body*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation */
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 25px;
+}
+
+nav a
+{
+    font-size: 1.9em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
 }
 
 
