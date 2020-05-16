@@ -10,6 +10,10 @@ p,input,button{
 }
 
 .loginBox{
+	-webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
 	margin-left: 50%;
 	left:-200px;
 	top:20vh;
@@ -21,14 +25,24 @@ p,input,button{
 	height: 400px;
 	width:400px;
     padding: 10px 10px 10px 10px;
-    border-radius: 8px;
-
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
   	background: white;
 
 	
 }
 
+.loginBox:hover{
+	box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
+	height: 401px;
+	width:401px;
+}
+
 #Bouton{
+	-webkit-transition: all 0.20s ease-in-out;
+	-moz-transition: all 0.20s ease-in-out;
+	-ms-transition: all 0.20s ease-in-out;
+	-o-transition: all 0.20s ease-in-out;
 	background: url('flèche-droite.png');
 	width:20px;
 	height:20px;
@@ -36,6 +50,11 @@ p,input,button{
 	top: 5px;
 	right: 5px;
 
+}
+
+#Bouton:hover{
+	width:22px;
+	height:22px;
 }
 
 #Bouton2{
@@ -130,11 +149,10 @@ button,
 
 .form-style-8 input[type=text], 
 .form-style-8 input[type=password]{
-	border-radius: 2px;
+	border-radius: 1px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	border:1px red blue;
 	padding: 3px;							
 	-webkit-transition: all 0.10s ease-in-out;
 	-moz-transition: all 0.10s ease-in-out;
@@ -147,6 +165,14 @@ button,
 	margin-bottom: 25px;
 }
 
+.form-style-8 input[type=text]:hover, 
+.form-style-8 input[type=password]:hover{
+	-moz-box-shadow: 0 0 8px #E87D3C;
+	-webkit-box-shadow: 0 0 8px #E87D3C;
+	box-shadow: 0 0 8px #E87D3C;
+	border: 2px solid #E87D3C;
+}
+
 .form-style-8 input[type=text]:focus, 
 .form-style-8 input[type=password]:focus{
 	-moz-box-shadow: 0 0 8px #E87D3C;
@@ -155,4 +181,13 @@ button,
 	border: 2px solid #E87D3C;
 }
 
-
+.form-style-8 input[type=text],
+.form-style-8 input[type=text]::after,
+.form-style-8 input[type=password],
+.form-style-8 input[type=password]::after
+{
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      }
