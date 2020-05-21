@@ -1,6 +1,9 @@
-html{
-    background: #DADCDB ;
+body{
+    background: url(background2.svg);
 
+}
+h1{
+    justify-content: center;
 }
 
 .container{
@@ -11,7 +14,7 @@ html{
     }
 
 .leftcontainer{
-    width: 50%;
+    width: 89%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,64 +22,193 @@ html{
 }
 
 .rigthcontainer{
-    width: 50%;
+    width: 10%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     margin-left:0.5vh;
+
 }
 
-#add_user_Box{
-    width:100%;
-    height: 50vh;
-    margin-bottom: 0.5%;
+#user_Box{
+    margin: auto;
+    width:80%;
+    height: 40vh;
+    display: flex;
+  align-items: center;
+  
+  flex-direction: column;
 
  }
 
-#remove_user_Box{
-    width:100%;
-    height: 50vh;
-    margin-top: 0.5%;
+ #removeButton{
 
  }
+
+ #removeButton,
+      #removeButton::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      #removeButton {
+        
+      background: none;
+      border: 2px solid #000;
+      border-radius: 4px;
+      color: #000;
+      text-transform: uppercase;
+      }
+      #removeButton::before,
+      #removeButton::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      #removeButton:hover {
+      color: #000; 
+      border: 2px solid #E87D3C;
+      background-color: #E87D3C;
+      }
+      
+      #removeButton::after {
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      #removeButton:hover:after {
+      }
+
+#user_function{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+#user_management{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#user_removal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#website{
+    margin: auto;
+    width:80%;
+    height: 40vh;
+    display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+
+
+ }
+
+ #website_function{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+#website_management{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#website_removal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 
 
 #myAccountBox{
     width:100%;
-    height: 50vh;
-    margin-bottom: 0.5%;
+    height: 10vh;
+    top:5px;
+    margin-bottom: 15px;
+
 
 }
 
 #navigationBox{
+    display: flex;
+    flex-direction: column;
     width:100%;
-    height: 50vh;
+    height: 90vh;
     margin-top: 0.5%;
+    margin-bottom: 15px;
+    justify-content: space-between;
 
 }
 
 .navCase{
+    display:flex;
     text-align: center;
     width:90%;
     height: 40px;
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
-    background-color: grey;
+    border: 0.5px solid #E87D3C;
     margin:auto;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 
+.navCase,
+      .navCase::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      
+      .navCase::before,
+      .navCase::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      .navCase:hover {
+      color: #000; 
+      background-color: #E87D3C;
+      }
+      
+      
+
 .boxstyle{
-    border-radius: 8px;
-    box-shadow: 0px 0px 50px rgba(255,255,255,0.8);
+    -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
     background: white;
-    opacity: 0.85;
+
+    
 }
 
 .boxstyle:hover{
-    border-radius: 8px;
-    box-shadow: 0px 0px 50px black;
-    background: rgba(250,250,250);
-    opacity: 0.85;
+    box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
+    
 }
 
