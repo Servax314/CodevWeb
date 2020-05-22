@@ -67,28 +67,17 @@ section p
     cursor: pointer;
   }*/
 
-.bouton_rouge input[type='file']
-{
-    height: 50px; /*hauteur boxe*/
-    width: 500px; /*largeur boxe*/
-    position: absolute;
-    background: #760001;
-    border: 1px solid #760001;
-    border-radius: 5px;
-    font-size: 1.2em;
-    padding: 3px 8px 0px 8px;
+  input[type=file], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
     color: white;
+    padding: 16px 32px;
     text-decoration: none;
-    font-weight: 900; /*gras*/
-    display: flex;      /* placer le texte au milieu de la flex box*/
-    justify-content: center;
-    align-items: center;
-    top: 60%;  /*pour placer la boxe div au sein de body*/
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 
-.bouton_rouge
+/*.bouton_rouge
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
@@ -128,7 +117,7 @@ section p
     top: 60%;  /*pour placer la boxe div au sein de body*/
     left: 50%;
     transform: translate(-50%, -50%);
-}
+
 
 /* Navigation */
 
