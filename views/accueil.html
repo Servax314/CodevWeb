@@ -23,19 +23,32 @@
             <img src="/machina_logo.png" alt="Logo_machina"  height="300" width="300" title="Don't drool on this logo please..."></p>
     </header>
 
-    <div class="loginBox">
-        <section>
+
+    <section>
+        <div>
             <h1>Convert handwritten documents to Word </h1>
             <p>Convert your handwritten documents to Word file with incredible assurancy </br> If you have any problem, please complain to Hugo Bouchez </p>
             <!--<a href="img.png" class="bouton_rouge" download="output.png">Upload an image </a>-->
+        </div>
 
-            <form action="/upload" method = "POST" enctype="multipart/form-data">
-                <input type="file" id="file" name="file" value="Button">
-                <input type='submit' id ="submit" value="bigoof">
-            </form>
+        <div class="download">
+            <div class="rouge1">
+                <p>Upload my image</p>
+                <form action="/upload" method = "POST" enctype="multipart/form-data">
+                <input type="file" id="file" name="file" class="hide_file">
+                 </form>
+            </div>
+            <div class="rouge2">
+                <p>Convert into word</p>
+                <form action="/upload" method = "POST" enctype="multipart/form-data">
+                    <input type='submit' id ="submit" value="bigoof" class="hide_file">
+                     </form>
+            </div>
+        </div>
 
-        </section>
-</div>
+        
+
+    </section>
 
 
 </body>

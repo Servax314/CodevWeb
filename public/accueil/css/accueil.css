@@ -11,7 +11,6 @@ header p
     text-align: center;
 }
 
-
 /*title*/
 section h1
 {
@@ -37,7 +36,7 @@ section p
 
 }
 
-.loginBox
+section
 {
 	margin-left: 35%;
 	left:-200px;
@@ -56,28 +55,22 @@ section p
     opacity: 0.85;
 }
 
-/*design du bouton rouge*/
-/*input[type=file], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-  }*/
+.download 
+{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
 
-  input[type=file], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+.download p 
+{
+    color: rgb(254, 254, 254); 
+}
 
-/*.bouton_rouge
+.rouge1
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
@@ -98,7 +91,64 @@ section p
     transform: translate(-50%, -50%);
 }
 
-.bouton_rouge:hover
+.rouge2
+{
+    height: 50px; /*hauteur boxe*/
+    width: 100px; /*largeur boxe*/
+    position: absolute;
+    background: #760001;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900; /*gras*/
+    display: flex;      /* placer le texte au milieu de la flex box*/
+    justify-content: center;
+    align-items: center;
+    top: 80%;  /*pour placer la boxe div au sein de body*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*rendre invisible le type file*/
+.hide_file {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 100%;
+}
+
+/*design du bouton rouge*/
+
+.rouge1 : hover 
+{
+    height: 50px; /*hauteur boxe*/
+    width: 500px; /*largeur boxe*/
+    position: absolute;
+    background: #760001;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900; /*gras*/
+    display: flex;      /* placer le texte au milieu de la flex box*/
+    justify-content: center;
+    align-items: center;
+    top: 60%;  /*pour placer la boxe div au sein de body*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rouge1 :hover
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
