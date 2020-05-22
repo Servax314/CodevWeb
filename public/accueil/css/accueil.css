@@ -2,7 +2,7 @@
 body
 {
     /*background-image:url('../image/machina_logo.png');
-    background-size: 1500px 1000px; 
+    background-size: 1500px 1000px;
     background-repeat: no-repeat;*/
 }
 
@@ -67,7 +67,7 @@ section p
     cursor: pointer;
   }*/
 
-  input[type=file], input[type=submit], input[type=reset] {
+  input[type='file'], input[type=submit], input[type=reset] {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -147,7 +147,7 @@ nav a:hover
 }
 
 
-    
+
 
 
 
@@ -209,8 +209,3 @@ nav a:hover
     margin: 20px; /*marge extérieure de la boxe*/
 
 }
-
-
-
-
-    
