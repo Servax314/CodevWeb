@@ -64,6 +64,7 @@ class DataLoader:
 		self.imgSize = imgSize
 		self.samples = []
 		self.filepath = filePath
+		self.numTrainSamplesPerEpoch = 10 000
 
 		training_test=open(filePath+'training_test.txt')
 		validation_test = open(filePath+'validation_test.txt')
@@ -115,10 +116,6 @@ class DataLoader:
 		
 		if badSamples!=[]:
 			print("Warning, damaged images found : ", badSamples)
-		
-
-
-
 
 		
 	def truncateLabel(self, text, maxTextLen):
@@ -130,3 +127,27 @@ class DataLoader:
 				cost+=1
 			if cost > maxTextLen[:i]
 		return text
+	
+	def switchToTrainSet(self):
+		self.dataAugmentation = True
+		self.currentIndex = 0
+		random.shuffle(self.trainSamples)
+		self.samples = self.trainSamples[:self.numTrainSamplesPerEpoch]
+	
+	def switchToValidationSet(self):
+		self.dataAugmentation = False
+		self.currentIndex = 0
+		self.samples = self.validationSamples
+
+	def getBatchData(self):
+		batchRange = range(self.currentIndex, self.currentIndex + self.batchSize)
+		texts = [self.samples[i].gtText for i in batchRange]
+		imgs = [preprocess(cv2.imread(self.samples[i].filePath, cv2.IMREAD_GRAYSCALE), self.imgSize, self.dataAugmentation) for i in batchRange]
+		self.currentIndex += self.batchSize
+		return Batch(texts, imgs)
+
+	def getIteratorInfo(self):
+		return (self.currentIndex // self.batchSize + 1, len(self.samples) // self.batchSize)
+
+	def hasNext(self):
+		return self.currentIndex + self.batchSize <=(self.samples)
