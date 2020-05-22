@@ -27,10 +27,17 @@
         <section>
             <h1>Convert handwritten documents to Word </h1>
             <p>Convert your handwritten documents to Word file with incredible assurancy </br> If you have any problem, please complain to Hugo Bouchez </p>
-            <a href="#" class="bouton_rouge">Upload an image <!--<img id="centerleft" src="/download2.jpg" alt="download" height="30" width="30">--></a>
-    </section>
-
-
+            <!--<a href="img.png" class="bouton_rouge" download="output.png">Upload an image </a>-->
+           
+            <form action="/action_page.php">
+                <input type="file" id="img" name="img" value="Button">
+              </form>
+              
+        </section>
 </div>
+
+<input type='file' class="bouton_rouge" value="Button">
+<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+
 </body>
 </html>
