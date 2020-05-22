@@ -2,7 +2,7 @@
 
 module.exports = {
   checkAuthenticated: function(req,res,next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated() != true) {
       return next()
     }
     res.redirect('/login')

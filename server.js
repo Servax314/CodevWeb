@@ -54,8 +54,8 @@ app.use(flash());
 app.use('/',require('./routes/accueil.js'));
 app.use('/',require('./routes/login.js'));
 app.use('/',require('./routes/register.js'));
-app.use('/upload', require('./routes/documents.js'));
-app.use('/download', require('./routes/documents.js'));
+app.use('/', require('./routes/documents.js'));
+app.use('/', require('./routes/documents.js'));
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
