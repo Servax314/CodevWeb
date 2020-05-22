@@ -15,20 +15,20 @@ require('./config/passport')(passport);
 const db = require('./config/keys.js').MongoURI;
 
 //connect to Mongo
-let gfs;
-const conn = mongoose.createConnection(db, {useNewUrlParser:true, useUnifiedTopology: true });
-conn.once('open', () => {
-  // Init stream
-  gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection('uploads');
-  console.log('mongo connected');
-});
+// let gfs;
+// const conn = mongoose.createConnection(db, {useNewUrlParser:true, useUnifiedTopology: true });
+// conn.once('open', () => {
+//   // Init stream
+//   gfs = Grid(conn.db, mongoose.mongo);
+//   gfs.collection('uploads');
+//   console.log('mongo connected');
+// });
 
-// mongoose.connect(db, {useNewUrlParser:true, useUnifiedTopology: true})
-//   .then(() =>
-//     console.log("mongo connected")
-//   )
-//   .catch(err => console.log(err));
+mongoose.connect(db, {useNewUrlParser:true, useUnifiedTopology: true})
+  .then(() =>
+    console.log("mongo connected")
+  )
+  .catch(err => console.log(err));
 
 app.use(express.static(__dirname + '/public'));
 

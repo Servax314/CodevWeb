@@ -7,7 +7,7 @@ function postRegister() {
     email: document.getElementById("mailAddress").value,
     username: document.getElementById("username").value,
     password1: document.getElementById("password1").value,
-    password2: document.getElementById("password2").value
+    password2: document.getElementById("lastpassword").value
   };
 
   let headers = new Headers();
@@ -36,4 +36,3 @@ function postRegister() {
     })
     .catch(err => console.log(err));
 };
- 
