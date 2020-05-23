@@ -148,7 +148,7 @@ section
     transform: translate(-50%, -50%);
 }
 
-.rouge1 :hover
+/*.rouge1 :hover
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
@@ -166,7 +166,8 @@ section
     align-items: center;
     top: 60%;  /*pour placer la boxe div au sein de body*/
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}*/
 
 
 /* Navigation */
