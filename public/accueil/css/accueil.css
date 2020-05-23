@@ -2,7 +2,7 @@
 body
 {
     /*background-image:url('../image/machina_logo.png');
-    background-size: 1500px 1000px; 
+    background-size: 1500px 1000px;
     background-repeat: no-repeat;*/
 }
 
@@ -55,7 +55,7 @@ section
     opacity: 0.85;
 }
 
-.download 
+.download
 {
     display: flex;
 	flex-direction: row;
@@ -65,9 +65,9 @@ section
 	align-content: stretch;
 }
 
-.download p 
+.download p
 {
-    color: rgb(254, 254, 254); 
+    color: rgb(254, 254, 254);
 }
 
 .rouge1
@@ -127,7 +127,7 @@ section
 
 /*design du bouton rouge*/
 
-.rouge1 : hover 
+.rouge1 : hover
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
@@ -198,7 +198,7 @@ nav a:hover
 }
 
 
-    
+
 
 
 
@@ -260,8 +260,3 @@ nav a:hover
     margin: 20px; /*marge extérieure de la boxe*/
 
 }
-
-
-
-
-    
