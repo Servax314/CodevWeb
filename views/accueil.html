@@ -9,15 +9,19 @@
 
 </head>
 
-<nav>
-    <ul>
-        <li><a href="#">My history</a></li>
-        <li><a href="#">My Stats</a></li>
-        <li><a href="login">Disconnection</a></li>
-    </ul>
-</nav>
+
 
 <body id="particles-js">
+    <div id="nav">
+        <div>
+            <a href="#">My history</a>        
+        </div>
+        <div>
+            <a href="#">My history</a>        
+        </div>
+
+    </div>
+    
     <header>
         <p>
             <img src="/machina_logo.png" alt="Logo_machina"  height="300" width="300" title="Don't drool on this logo please..."></p>
@@ -31,18 +35,17 @@
         </div>
 
         <div class="download">
-            <form action="/upload" method = "POST" enctype="multipart/form-data"></form>
+            <form action="/upload" method = "POST" enctype="multipart/form-data">
             <div class="rouge1">
                 <p>Upload my image</p>
                 <input type="file" id="file" name="file" class="hide_file">
-                 </form>
+                 
             </div>
             <div class="rouge2">
                 <p>Convert into word</p>
-                <form action="/upload" method = "POST" enctype="multipart/form-data">
-                    <input type='submit' id ="submit" value="bigoof" class="hide_file">
-                     </form>
+                <input type='submit' id ="submit" value="bigoof" class="hide_file">
             </div>
+        </form>
         </div>
 
         
