@@ -11,13 +11,6 @@ router.post('/upload', upload.single('file'), function(req,res){
   res.json({file: req.file});
 });
 
-//consult images
-app.get('/image', function(req,res) {
-  gfs.files.find().toArray((err, file) => {
-    return res.json(file);
-  })
-});
-
 
 //download numerical document
 router.get('/download', function(req,res){

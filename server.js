@@ -55,6 +55,13 @@ app.use('/',require('./routes/register.js'));
 app.use('/', require('./routes/documents.js'));
 app.use('/', require('./routes/documents.js'));
 
+//consult images
+app.get('/image/:filename', function(req,res) {
+  gfs.files.findOne({filename: req.params.filename}, (err, file) => {
+    const readStream = gfs.createReadStream(file.filename);
+    readStream.pipe(res);
+  })
+});
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
