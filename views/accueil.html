@@ -28,13 +28,12 @@
         <div>
             <h1>Convert handwritten documents to Word </h1>
             <p>Convert your handwritten documents to Word file with incredible assurancy </br> If you have any problem, please complain to Hugo Bouchez </p>
-            <!--<a href="img.png" class="bouton_rouge" download="output.png">Upload an image </a>-->
         </div>
 
         <div class="download">
+            <form action="/upload" method = "POST" enctype="multipart/form-data"></form>
             <div class="rouge1">
                 <p>Upload my image</p>
-                <form action="/upload" method = "POST" enctype="multipart/form-data">
                 <input type="file" id="file" name="file" class="hide_file">
                  </form>
             </div>

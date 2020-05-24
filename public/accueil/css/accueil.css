@@ -1,10 +1,3 @@
-/* On travaille sur la balise body, donc sur TOUTE la page */
-body
-{
-    /*background-image:url('../image/machina_logo.png');
-    background-size: 1500px 1000px;
-    background-repeat: no-repeat;*/
-}
 
 header p
 {
@@ -89,6 +82,7 @@ section
     top: 60%;  /*pour placer la boxe div au sein de body*/
     left: 50%;
     transform: translate(-50%, -50%);
+    display : inline-block; 
 }
 
 .rouge2
@@ -109,7 +103,8 @@ section
     align-items: center;
     top: 80%;  /*pour placer la boxe div au sein de body*/
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(90%, -165%);
+    display : inline-block; 
 }
 
 /*rendre invisible le type file*/
@@ -148,7 +143,7 @@ section
     transform: translate(-50%, -50%);
 }
 
-/*.rouge1 :hover
+.rouge1 :hover
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
@@ -181,6 +176,7 @@ nav ul
 nav li
 {
     margin-right: 25px;
+    
 }
 
 nav a
@@ -197,66 +193,3 @@ nav a:hover
     border-bottom: 3px solid #E87D3C;
 }
 
-
-
-
-
-
-
-
-/*classe permettant de faire flotter un texte ou image à gauche*/
-.floatingleft
-{
-    float: left; /*l'image flotte à gauche*/
-    border-left: 2px double black; /*bordure à gauche*/
-    border-right: 2px double black; /*bordure à droite*/
-    border-top: 2px double black; /*bordure au dessus*/
-    border-bottom: 2px double black; /*bordure en dessous*/
-    border-radius: 10px; /*bordure à gauche*/
-    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
-    width: 250px; /*largeur de la boxe*/
-    height: 300px; /*hauteur de la boxe*/
-    padding: 12px; /*marge intérieure de la boxe*/
-    margin: 20px; /*marge extérieure de la boxe*/
-    overflow: hidden; /*permet de cacher le texte si ce dernier dépasse de la boxe*/
-    word-wrap: break-word; /*coupe les mots trops longs qui dépassent du cadre*/
-}
-
-/*classe permettant de faire flotter un texte ou image à droite*/
-.floatingright
-{
-    float: right; /*l'image flotte à droite*/
-    border-left: 2px double black; /*bordure à gauche*/
-    border-right: 2px double black; /*bordure à droite*/
-    border-top: 2px double black; /*bordure au dessus*/
-    border-bottom: 2px double black; /*bordure en dessous*/
-    border-radius: 10px; /*bordure à gauche*/
-    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
-    width: 250px; /*largeur de la boxe*/
-    height: 300px; /*hauteur de la boxe*/
-    padding: 12px; /*marge intérieure de la boxe*/
-    margin: 20px; /*marge extérieure de la boxe*/
-}
-
-
-#conteneur
-{
-    display: flex;
-	flex-direction: column-reverse;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-    align-content: stretch;
-    float: right; /*l'image flotte à droite*/
-    border-left: 2px double black; /*bordure à gauche*/
-    border-right: 2px double black; /*bordure à droite*/
-    border-top: 2px double black; /*bordure au dessus*/
-    border-bottom: 2px double black; /*bordure en dessous*/
-    border-radius: 10px; /*bordure à gauche*/
-    box-shadow: 6px 6px 6px black; /*bordure à gauche*/
-    width: 250px; /*largeur de la boxe*/
-    height: 300px; /*hauteur de la boxe*/
-    padding: 12px; /*marge intérieure de la boxe*/
-    margin: 20px; /*marge extérieure de la boxe*/
-
-}
