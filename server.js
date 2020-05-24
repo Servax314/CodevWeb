@@ -54,6 +54,7 @@ app.use('/',require('./routes/login.js'));
 app.use('/',require('./routes/register.js'));
 app.use('/', require('./routes/documents.js'));
 app.use('/', require('./routes/documents.js'));
+app.use('/', require('./routes/admin.js'));
 
 //consult images
 app.get('/image/:filename', function(req,res) {
