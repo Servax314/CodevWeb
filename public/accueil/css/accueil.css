@@ -56,6 +56,7 @@ section
 	justify-content: center;
 	align-items: stretch;
 	align-content: stretch;
+  top : 50%;
 }
 
 .download p
@@ -67,7 +68,6 @@ section
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
-    position: absolute;
     background: #760001;
     border: 1px solid #760001;
     border-radius: 5px;
@@ -76,20 +76,13 @@ section
     color: white;
     text-decoration: none;
     font-weight: 900; /*gras*/
-    display: flex;      /* placer le texte au milieu de la flex box*/
-    justify-content: center;
-    align-items: center;
-    top: 60%;  /*pour placer la boxe div au sein de body*/
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display : inline-block; 
+    margin-right: 10px;
 }
 
 .rouge2
 {
     height: 50px; /*hauteur boxe*/
     width: 100px; /*largeur boxe*/
-    position: absolute;
     background: #760001;
     border: 1px solid #760001;
     border-radius: 5px;
@@ -98,13 +91,6 @@ section
     color: white;
     text-decoration: none;
     font-weight: 900; /*gras*/
-    display: flex;      /* placer le texte au milieu de la flex box*/
-    justify-content: center;
-    align-items: center;
-    top: 80%;  /*pour placer la boxe div au sein de body*/
-    left: 50%;
-    transform: translate(90%, -165%);
-    display : inline-block; 
 }
 
 /*rendre invisible le type file*/
@@ -176,7 +162,7 @@ nav ul
 nav li
 {
     margin-right: 25px;
-    
+
 }
 
 nav a
@@ -192,4 +178,3 @@ nav a:hover
     color: #E87D3C;
     border-bottom: 3px solid #E87D3C;
 }
-
