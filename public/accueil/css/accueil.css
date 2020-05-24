@@ -1,4 +1,11 @@
 
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
 header p
 {
     text-align: center;
@@ -32,13 +39,13 @@ section p
 section
 {
 	margin-left: 35%;
-	left:-200px;
-	top:30vh;
-	position: absolute;
+	left:-200px; /**/
+	top:30vh;/**/
+	position: absolute; /**/
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	align-items: center; /**/
+	justify-content: space-between;/**/
 	height: 300px;
 	width:800px;
     padding: 10px 10px 10px 10px;
@@ -150,10 +157,9 @@ section
     transform: translate(-50%, -50%)
 }*/
 
-
 /* Navigation */
 
-nav ul
+#nav
 {
     list-style-type: none;
     display: flex;
@@ -161,13 +167,12 @@ nav ul
 
 nav li
 {
-    margin-right: 25px;
-
+    margin-right: 15px;
 }
 
 nav a
 {
-    font-size: 1.9em;
+    font-size: 1.3em;
     color: #181818;
     padding-bottom: 3px;
     text-decoration: none;
@@ -175,6 +180,6 @@ nav a
 
 nav a:hover
 {
-    color: #E87D3C;
-    border-bottom: 3px solid #E87D3C;
+    color: #760001;
+    border-bottom: 3px solid #760001;
 }
