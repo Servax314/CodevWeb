@@ -63,7 +63,6 @@ section
 	justify-content: center;
 	align-items: stretch;
 	align-content: stretch;
-  top : 50%;
 }
 
 .download p
@@ -94,7 +93,7 @@ section
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
-    padding: 3px 8px 0px 8px;
+    padding: 3px 8px 3px 8px;
     color: white;
     text-decoration: none;
     font-weight: 900; /*gras*/
