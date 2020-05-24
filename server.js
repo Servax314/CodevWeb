@@ -12,19 +12,17 @@ const app = express();
 require('./config/passport')(passport);
 
 //db config
-const db = require('./config/keys.js').MongoURI;
+const URI = require('./config/keys.js').MongoURI;
 
 //connect to Mongo
-// let gfs;
-// const conn = mongoose.createConnection(db, {useNewUrlParser:true, useUnifiedTopology: true });
-// conn.once('open', () => {
-//   // Init stream
-//   gfs = Grid(conn.db, mongoose.mongo);
-//   gfs.collection('uploads');
-//   console.log('mongo connected');
-// });
+let gfs;
+const conn = mongoose.createConnection(URI, {useNewUrlParser:true, useUnifiedTopology: true });
+conn.once('open', () => {
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
 
-mongoose.connect(db, {useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.connect(URI, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() =>
     console.log("mongo connected")
   )
@@ -56,6 +54,7 @@ app.use('/',require('./routes/login.js'));
 app.use('/',require('./routes/register.js'));
 app.use('/', require('./routes/documents.js'));
 app.use('/', require('./routes/documents.js'));
+
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
