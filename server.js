@@ -16,11 +16,15 @@ const URI = require('./config/keys.js').MongoURI;
 
 //connect to Mongo
 let gfs;
+Grid.mongo = mongoose.mongo;
 const conn = mongoose.createConnection(URI, {useNewUrlParser:true, useUnifiedTopology: true });
 conn.once('open', () => {
-  gfs = Grid(conn.db, mongoose.mongo);
+  gfs = Grid(conn.db);
   gfs.collection('uploads');
+  module.exports = gfs;
+  console.log(gfs.files);
 });
+
 
 mongoose.connect(URI, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() =>
@@ -57,12 +61,7 @@ app.use('/', require('./routes/documents.js'));
 app.use('/', require('./routes/admin.js'));
 
 //consult images
-app.get('/image/:filename', function(req,res) {
-  gfs.files.findOne({filename: req.params.filename}, (err, file) => {
-    const readStream = gfs.createReadStream(file.filename);
-    readStream.pipe(res);
-  })
-});
+
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
