@@ -64,25 +64,27 @@ class DataLoader:
 		self.filepath = filePath
 		self.numTrainSamplesPerEpoch = 20000
 
-		training_test=open(filePath+'training_test.txt')
-		validation_test = open(filePath+'validation_test.txt')
+		training_set=open(filePath+'training_set.txt',encoding='utf-8-sig')
+		validation_set = open(filePath+'validation_set.txt',encoding='utf-8-sig')
 		
 		training_chars = set()
 		validation_chars = set()
 		badSamples = []
 
+		self.trainSamples = []
+		self.validationSamples = []
 		
-		for line in training_test:
+		for line in training_set:
 			# ignore the empty line or the commented line
 			if not line or line[0]=='#':
 				continue
 
 			lineSplit = line.strip().split(' ')
-			fileName = filePath+'training_test'+lineSplit[0]
+			fileName = filePath+'training_set/'+lineSplit[0]
 
 			#text are words
-			text = self.truncateLabel(lineSplit[1], maxTextLen)
-			training_chars = training_chars.union(set(list(text)))
+			gtText = self.truncateLabel(lineSplit[1], maxTextLen)
+			training_chars = training_chars.union(set(list(gtText)))
 
 			# check if image is not empty
 			if not os.path.getsize(fileName):
@@ -90,35 +92,50 @@ class DataLoader:
 				continue
 
 			# put sample into list
-			self.trainSamples.append(Sample(gText, fileName))
-			self.trainWords = [x.gText for x in self.trainSamples]
+			self.trainSamples.append(Sample(gtText, fileName))
+			self.trainWords = [x.gtText for x in self.trainSamples]
+
+		print("Load complete : train_set")
 		
-		for line in validation_test:
+		for line in validation_set:
 			#ignore the empty line or the commented line
 			if not line or line[0]=='#':
 				continue
 				
 			lineSplit = line.strip().split(' ')
-			fileName = filePath+'validation_test'+lineSplit[0]
+			fileName = filePath+'validation_set/'+lineSplit[0]
 
 			#text are words
-			text = self.truncateLabel(lineSplit[1],maxTextLen)
-			validation_chars = validation_chars.union(set(list(text)))
+			gtText = self.truncateLabel(lineSplit[1],maxTextLen)
+			validation_chars = validation_chars.union(set(list(gtText)))
 
 			#check if image is not empty
 			if not os.path.getsize(fileName):
 				badSamples.append(fileName)
 				continue
-
-			self.validationSamples.append(Sample(gText, fileName))
-			self.validationWords = [x.gText for x in self.validationSamples]
-		
-		if badSamples!=[]:
-			print("Warning, damaged images found : ", badSamples)
+			
+			self.validationSamples.append(Sample(gtText, fileName))
+			self.validationWords = [x.gtText for x in self.validationSamples]
+			
+		print("Load complete : validation_set")
 
 		self.trainSet()
-		self.charList = sorted(list(training_chars + validation_chars))
-		
+		self.charList = sorted(list(training_chars.union(validation_chars)))
+		print("Loading complete")
+	
+	def trainSet(self):
+		"switchto randomly chosen subset of training set"
+		self.dataAugmentation = True
+		self.currIdx = 0
+		random.shuffle(self.trainSamples)
+		self.samples = self.trainSamples[:self.numTrainSamplesPerEpoch]
+	
+	def validationSet(self):
+		"switch to validation set"
+		self.dataAugmentation = False
+		self.currIdx = 0
+		self.samples = self.validationSamples
+
 	def truncateLabel(self, text, maxTextLen):
 		cost = 0
 		for i in range(len(text)):
@@ -126,7 +143,8 @@ class DataLoader:
 				cost+=2
 			else:
 				cost+=1
-			if cost > maxTextLen[:i]
+			if cost > maxTextLen:
+				return text[:i]
 		return text
 	
 	def switchToTrainSet(self):
@@ -151,4 +169,4 @@ class DataLoader:
 		return (self.currIdx // self.batchSize + 1, len(self.samples) // self.batchSize)
 
 	def hasNext(self):
-		return self.currIdx + self.batchSize <=(self.samples)
+		return self.currIdx + self.batchSize <=len(self.samples)

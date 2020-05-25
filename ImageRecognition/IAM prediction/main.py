@@ -24,7 +24,7 @@ def train(model, loader):
 	epoch = 0 # number of training epochs since start
 	bestCharErrorRate = float('inf') # best valdiation character error rate
 	noImprovementSince = 0 # number of epochs no improvement of character error rate occured
-	earlyStopping = 5 # stop training after this number of epochs without improvement
+	earlyStopping = 0 # stop training after this number of epochs without improvement
 	while True:
 		epoch += 1
 		print('Epoch:', epoch)
@@ -47,7 +47,10 @@ def train(model, loader):
 			bestCharErrorRate = charErrorRate
 			noImprovementSince = 0
 			model.save()
-			open(FilePaths.fnAccuracy, 'w').write('Validation character error rate of saved model: %f%%' % (charErrorRate*100.0))
+			f = open("Accuracy.txt", 'w')
+			f.write('Validation character error rate of saved model: %f%%' % (charErrorRate*100.0))
+			f.close()
+
 		else:
 			print('Character error rate not improved')
 			noImprovementSince += 1
@@ -117,13 +120,13 @@ def main():
 	# train or validate on IAM dataset	
 	if args.train or args.validate:
 		# load training data, create TF model
-		loader = DataLoader(FilePaths.fnTrain, Model.batchSize, Model.imgSize, Model.maxTextLen)
+		loader = DataLoader("RIMES/", Model.batchSize, Model.imgSize, Model.maxTextLen)
 
 		# save characters of model for inference mode
-		open(FilePaths.fnCharList, 'w').write(str().join(loader.charList))
+		#open(FilePaths.fnCharList, 'w').write(str().join(loader.charList))
 		
 		# save words contained in dataset into file
-		open(FilePaths.fnCorpus, 'w').write(str(' ').join(loader.trainWords + loader.validationWords))
+		#open(FilePaths.fnCorpus, 'w').write(str(' ').join(loader.trainWords + loader.validationWords))
 
 		# execute training or validation
 		if args.train:
@@ -134,10 +137,11 @@ def main():
 			validate(model, loader)
 
 	# infer text on test image
-	else:
-		print(open(FilePaths.fnAccuracy).read())
-		model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
-		infer(model, FilePaths.fnInfer)
+	#else:
+		#break
+		#print(open(FilePaths.fnAccuracy).read())
+		#model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
+		#infer(model, FilePaths.fnInfer)
 
 
 if __name__ == '__main__':
