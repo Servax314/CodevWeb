@@ -1,0 +1,33 @@
+RESULTS:
+
+KNN Classifier : {neighbors = 12, algorithm = brute}
+score = 0.27094622759483117
+
+KNN Classifier : {neighbors = 15, algorithm = brute}
+score = 0.2659441433930804
+
+KNN Classifier : {neighbors = 7, algorithm = brute}
+score = 0.275531471446436
+
+KNN Classifier : {neighbors = 5, algorithm = brute}
+score = 0.2736556898707795
+
+KNN Classifier : {neighbors = 62, algorithm = brute}
+score = 0.2102959566486036
+
+Classifier(
+    layers=[
+        Layer("Rectifier", units=600),
+		Layer("Rectifier", units=300),
+		#Layer("Rectifier", units=100),
+        Layer("Softmax")],
+    learning_rate=0.01,
+	dropout_rate=0.3,
+	valid_size=0.15,
+	learning_momentum=0.4,
+	batch_size=10,
+	#learning_rule='adam',
+    n_iter=100,
+	verbose=True)
+
+score = 0.4335139641517299
