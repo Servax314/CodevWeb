@@ -6,6 +6,8 @@
     <title>Welcome to Machina</title>
     <link rel="stylesheet" href="/accueil/css/accueil.css">
     <link rel="stylesheet" href="/accueil/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 
 </head>
 
@@ -36,14 +38,12 @@
 
         <div class="download">
             <form action="/upload" method = "POST" enctype="multipart/form-data">
-            <!-- <div class="rouge1"> -->
-                <p>Upload my image</p>
-                <input type="file" id="file" name="file">
-
-            <!-- </div> -->
+            <div class="custom-file mb-3">
+                <input type="file" id="file" name="file" class="custom-file-input">
+                <label for="file" class="custom-file-label">Choose File</label>
+            </div>
             <!-- <div class="rouge2"> -->
-                <p>Convert into word</p>
-                <input type='submit' id ="submit" value="Submit">
+                <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
             <!-- </div> -->
         </form>
         </div>
