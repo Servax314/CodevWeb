@@ -29,7 +29,7 @@ router.get('/prediction', function(req,res){
   python.on('close', (code) => {
     console.log(`child process closed`);
     res.json(dataToSend)
-    console.log(res)
+    //console.log(res)
   });
 });
 
