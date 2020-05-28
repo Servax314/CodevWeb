@@ -21,7 +21,7 @@ router.get('/image/:filename', function(req,res) {
 //download numerical document
 router.get('/prediction', function(req,res){
   var dataToSend;
-  const python = spawn('python3', ['-W ignore ','../SimpleHTR/src/main.py', '../SimpleHTR/src/test1.jpg']);
+  const python = spawn('python3', ['-W ignore ','../SimpleHTR/src/main.py', '-p', '../SimpleHTR/src/test1.jpg']);
   python.on('close', (code) => {
     console.log(`child process closed`);
     res.json(dataToSend)
