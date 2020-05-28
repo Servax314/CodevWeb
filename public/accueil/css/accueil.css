@@ -49,10 +49,14 @@ section
 	height: 300px;
 	width:800px;
     padding: 10px 10px 10px 10px;
-    border-radius: 8px;
-  	box-shadow: 0px 0px 50px rgba(255,255,255,0.8);
-  	background: white;
-    opacity: 0.85;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
+    background: white;
+}
+
+section:hover{
+    box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
+
 }
 
 .download
@@ -162,7 +166,7 @@ section
     list-style-type: none;
     display: flex;
 }
-
+/*
 nav li
 {
     margin-right: 15px;
@@ -180,4 +184,4 @@ nav a:hover
 {
     color: #760001;
     border-bottom: 3px solid #760001;
-}
+}*/
