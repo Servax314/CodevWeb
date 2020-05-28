@@ -93,8 +93,8 @@ def infer(model, fnImg):
 	img = preprocess(cv2.imread(fnImg, cv2.IMREAD_GRAYSCALE), Model.imgSize)
 	batch = Batch(None, [img])
 	(recognized, probability) = model.inferBatch(batch, True)
-	print('Recognized:', '"' + recognized[0] + '"')
-	print('Probability:', probability[0])
+	print(recognized[0])
+	#print('Probability:', probability[0])
 
 
 def main():
@@ -137,12 +137,12 @@ def main():
 
 	elif args.path:
 		path = args.path
-		print(open(FilePaths.fnAccuracy).read())
+		#print(open(FilePaths.fnAccuracy).read())
 		model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
 		infer(model, path)
 	# infer text on test image
 	else:
-		print(open(FilePaths.fnAccuracy).read())
+		#print(open(FilePaths.fnAccuracy).read())
 		model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
 		infer(model, FilePaths.fnInfer)
 
