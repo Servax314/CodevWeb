@@ -69,4 +69,4 @@ class CustomModel(tf.keras.Model):
 
 		return output
 
-model = CustomModel()
+

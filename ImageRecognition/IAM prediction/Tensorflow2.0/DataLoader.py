@@ -1,16 +1,13 @@
 #Code: https://github.com/githubharald/SimpleHTR
 
+from __future__ import division
+from __future__ import print_function
+
+import os
+import random
 import numpy as np
 import cv2
-import random
-import matplotlib.pyplot as plt
-import PIL
-from PIL import Image
-import tensorflow as tf
-import sklearn
-from sklearn.preprocessing import StandardScaler
-from SamplePreprocessing import preprocess
-import os
+from SamplePreprocessor import preprocess
 
 ###### COMMENTARY ######
 
@@ -39,16 +36,17 @@ DataLoader.numTrainSamplesPerEpoch -> num train samples per epoch
 
 class Sample:
 	"sample from the dataset"
-	def __init__(self, text, filePath):
-		self.text = text
+	def __init__(self, gtText, filePath):
+		self.gtText = gtText
 		self.filePath = filePath
 
 
 class Batch:
 	"batch containing images and ground truth texts"
-	def __init__(self, texts, imgs):
+	def __init__(self, gtTexts, imgs):
 		self.imgs = np.stack(imgs, axis=0)
-		self.texts = texts
+		self.gtTexts = gtTexts
+
 
 
 class DataLoader: 
@@ -64,10 +62,11 @@ class DataLoader:
 		self.imgSize = imgSize
 		self.samples = []
 		self.filepath = filePath
-		self.numTrainSamplesPerEpoch = 10 000
+		self.numTrainSamplesPerEpoch = 20000
 
 		training_test=open(filePath+'training_test.txt')
 		validation_test = open(filePath+'validation_test.txt')
+		
 		training_chars = set()
 		validation_chars = set()
 		badSamples = []
@@ -91,8 +90,8 @@ class DataLoader:
 				continue
 
 			# put sample into list
-			self.trainSamples.append(Sample(text, fileName))
-			self.trainWords = [x.text for x in self.trainSamples]
+			self.trainSamples.append(Sample(gText, fileName))
+			self.trainWords = [x.gText for x in self.trainSamples]
 		
 		for line in validation_test:
 			#ignore the empty line or the commented line
@@ -111,12 +110,14 @@ class DataLoader:
 				badSamples.append(fileName)
 				continue
 
-			self.validationSamples.append(Sample(text, fileName))
-			self.validationWords = [x.text for x in self.validationSamples]
+			self.validationSamples.append(Sample(gText, fileName))
+			self.validationWords = [x.gText for x in self.validationSamples]
 		
 		if badSamples!=[]:
 			print("Warning, damaged images found : ", badSamples)
 
+		self.trainSet()
+		self.charList = sorted(list(training_chars + validation_chars))
 		
 	def truncateLabel(self, text, maxTextLen):
 		cost = 0
@@ -130,24 +131,24 @@ class DataLoader:
 	
 	def switchToTrainSet(self):
 		self.dataAugmentation = True
-		self.currentIndex = 0
+		self.currIdx = 0
 		random.shuffle(self.trainSamples)
 		self.samples = self.trainSamples[:self.numTrainSamplesPerEpoch]
 	
 	def switchToValidationSet(self):
 		self.dataAugmentation = False
-		self.currentIndex = 0
+		self.currIdx = 0
 		self.samples = self.validationSamples
 
-	def getBatchData(self):
-		batchRange = range(self.currentIndex, self.currentIndex + self.batchSize)
-		texts = [self.samples[i].gtText for i in batchRange]
+	def getNext(self):
+		batchRange = range(self.currIdx, self.currIdx + self.batchSize)
+		gtTexts = [self.samples[i].gtText for i in batchRange]
 		imgs = [preprocess(cv2.imread(self.samples[i].filePath, cv2.IMREAD_GRAYSCALE), self.imgSize, self.dataAugmentation) for i in batchRange]
-		self.currentIndex += self.batchSize
-		return Batch(texts, imgs)
+		self.currIdx += self.batchSize
+		return Batch(gtTexts, imgs)
 
 	def getIteratorInfo(self):
-		return (self.currentIndex // self.batchSize + 1, len(self.samples) // self.batchSize)
+		return (self.currIdx // self.batchSize + 1, len(self.samples) // self.batchSize)
 
 	def hasNext(self):
-		return self.currentIndex + self.batchSize <=(self.samples)
+		return self.currIdx + self.batchSize <=(self.samples)
