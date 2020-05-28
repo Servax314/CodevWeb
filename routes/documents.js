@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 var mongoose = require("mongoose");
 const {spawn} = require('child_process');
+const path = require('path');
 
 const upload = require('../config/storageGF.js');
 
@@ -21,7 +22,7 @@ router.get('/image/:filename', function(req,res) {
 //download numerical document
 router.get('/prediction', function(req,res){
   var dataToSend= 'helo';
-  const python = spawn('python3', ['-W ignore', '/SimpleHTR/src/main.py -p', '/SimpleHTR/src/test1.png']);
+  const python = spawn('python3', ['-W ignore', '/SimpleHTR/src/main.py -p', 'test1.png']);
   python.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');
     dataToSend = data.toString();
