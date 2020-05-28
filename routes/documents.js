@@ -20,8 +20,8 @@ router.get('/image/:filename', function(req,res) {
 });
 
 //download numerical document
-router.get('/prediction', function(req,res){
-  var dataToSend= 'helo';
+router.get('/prediction/:id', function(req,res){
+  var dataToSend;
   const python = spawn('python3', ['-W ignore', '/SimpleHTR/src/main.py -p', 'test1.png']);
   python.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');
@@ -29,7 +29,7 @@ router.get('/prediction', function(req,res){
   });
   python.on('close', (code) => {
     console.log(`child process closed`);
-    res.json(dataToSend)
+    res.send(dataToSend)
     //console.log(res)
   });
 });
