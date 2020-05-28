@@ -14,43 +14,57 @@
 
 
 <body id="particles-js">
-    <div id="nav">
-        <div>
-            <a href="#">My history</a>
-        </div>
-        <div>
-            <a href="#">My history</a>
-        </div>
-
-    </div>
+    
 
     <header>
         <p>
             <img src="/machina_logo.png" alt="Logo_machina"  height="300" width="300" title="Don't drool on this logo please..."></p>
     </header>
 
-
-    <section>
-        <div>
-            <h1>Convert handwritten documents to Word </h1>
-            <p>Convert your handwritten documents to Word file with incredible assurancy </br> If you have any problem, please complain to Hugo Bouchez </p>
-        </div>
-
-        <div class="download">
-            <form action="/upload" method = "POST" enctype="multipart/form-data">
-            <div class="custom-file mb-3">
-                <input type="file" id="file" name="file" class="custom-file-input">
-                <label for="file" class="custom-file-label">Choose File</label>
+        <div id="bottomcontainer">
+        <div id="leftcontainer">
+        <section>
+            <div>
+                <h1>Convert handwritten documents to Word </h1>
+                <p>Convert your handwritten documents to Word file with incredible assurancy </br> If you have any problem, please complain to Hugo Bouchez </p>
             </div>
+
+            <div class="download">
+                <form action="/upload" method = "POST" enctype="multipart/form-data">
+                <div class="custom-file mb-3">
+                    <input type="file" id="file" name="file" class="custom-file-input">
+                    <label for="file" class="custom-file-label">Choose File</label>
+                </div>
             <!-- <div class="rouge2"> -->
-                <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
-            <!-- </div> -->
-        </form>
+                    <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
+                <!-- </div> -->
+            </form>
+            </div>
+
+        </section>
         </div>
-
-
-
-    </section>
+        <div id="rightcontainer">
+            <div class="boxstyle" id ="navigationBox">
+                        <button class="navCase" id ="navigation1">
+                            Research
+                        </button>
+                        <div class="navCase" id ="navigation2">
+                            The method
+                        </div>
+                        <div class="navCase" id ="navigation3">
+                        Photos
+                        </div>
+                        <div class="navCase" id ="navigation4">
+                        The team
+                        </div>
+                        <div class="navCase" id ="navigation5">
+                        Fun facts
+                        </div>
+                        <div class="navCase" id ="navigation6">
+                            Fun animation
+                    </div>
+        </div>
+        </div>
 
 
 </body>
