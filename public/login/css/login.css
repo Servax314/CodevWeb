@@ -34,8 +34,8 @@ p,input,button{
 
 .loginBox:hover{
 	box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
-	height: 401px;
-	width:401px;
+	height: 400px;
+	width:400px;
 }
 
 #Bouton{
