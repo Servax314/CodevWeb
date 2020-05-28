@@ -20,8 +20,8 @@ router.get('/image/:filename', function(req,res) {
 
 //download numerical document
 router.get('/prediction', function(req,res){
-  var dataToSend= 'Hello';
-  const python = spawn('python3', ['../SimpleHTR/src/main.py', '../SimpleHTR/src/test1.jpg']);
+  var dataToSend= 'helo';
+  const python = spawn('python3', ['-W ignore ../SimpleHTR/src/main.py -p ../SimpleHTR/src/test1.png']);
   python.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');
     dataToSend = data.toString();
