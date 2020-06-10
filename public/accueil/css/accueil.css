@@ -6,6 +6,220 @@ body
 }
 
 
+body{
+    background: url(background2.svg);
+
+}
+h2{
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row
+    width: 100%;
+    min-height: 100vh;
+    }
+
+.leftcontainer{
+    width: 89%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-right:0.5%;
+}
+
+.rigthcontainer{
+    width: 10%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left:0.5vh;
+
+}
+
+#user_Box{
+    margin: auto;
+    width:80%;
+    height: 40vh;
+    display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+
+ }
+
+ #removeButton{
+
+ }
+
+ #removeButton,
+      #removeButton::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      #removeButton {
+        
+      background: none;
+      border: 2px solid #000;
+      border-radius: 4px;
+      color: #000;
+      text-transform: uppercase;
+      }
+      #removeButton::before,
+      #removeButton::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      #removeButton:hover {
+      color: #000; 
+      border: 2px solid #E87D3C;
+      background-color: #E87D3C;
+      }
+      
+      #removeButton::after {
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      #removeButton:hover:after {
+      }
+
+#user_function{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+#user_management{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#user_removal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#website{
+    margin: auto;
+    width:80%;
+    height: 40vh;
+    display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+
+
+ }
+
+ #website_function{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+#website_management{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#website_removal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+#myAccountBox{
+    width:100%;
+    height: 10vh;
+    top:5px;
+    margin-bottom: 15px;
+
+
+}
+
+#navigationBox{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 90vh;
+    margin-top: 0.5%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+
+}
+
+.navCase{
+    display:flex;
+    text-align: center;
+    width:90%;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.5px solid #E87D3C;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.navCase,
+      .navCase::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      
+      .navCase::before,
+      .navCase::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      .navCase:hover {
+      color: #000; 
+      background-color: #E87D3C;
+      }
+      
+      
+
+.boxstyle{
+    -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
+    background: white;
+
+    
+}
+
+.boxstyle:hover{
+    box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
+    
+}
+
 header p
 {
     text-align: center;
@@ -38,35 +252,27 @@ section p
 
 section
 {
-	margin-left: 35%;
-	left:-200px; /**/
-	top:30vh;/**/
-	position: absolute; /**/
-	display: flex;
-	flex-direction: column;
-	align-items: center; /**/
-	justify-content: space-between;/**/
-	height: 300px;
-	width:800px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
-    background: white;
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /**/
+  justify-content: space-between;/**/
+
 }
 
 section:hover{
-    box-shadow: 0px 0px 9px rgba(100,100,100,0.7);
+
 
 }
 
 .download
 {
     display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
 }
 
 .download p
@@ -104,7 +310,6 @@ section:hover{
 
 /*rendre invisible le type file*/
 .hide_file {
-    position: absolute;
     z-index: 1000;
     opacity: 0;
     cursor: pointer;
@@ -121,7 +326,6 @@ section:hover{
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
-    position: absolute;
     background: #760001;
     border: 1px solid #760001;
     border-radius: 5px;
@@ -142,7 +346,6 @@ section:hover{
 {
     height: 50px; /*hauteur boxe*/
     width: 500px; /*largeur boxe*/
-    position: absolute;
     background: rgb(44, 10, 10);
     border: 1px solid rgb(44, 10, 10);
     border-radius: 5px;
@@ -165,6 +368,14 @@ section:hover{
 {
     list-style-type: none;
     display: flex;
+}
+
+#chooseFile:hover{
+    -moz-box-shadow: 0 0 8px #E87D3C;
+    -webkit-box-shadow: 0 0 8px #E87D3C;
+    box-shadow: 0 0 8px #E87D3C;
+    border: 2px solid #E87D3C;
+}
 }
 /*
 nav li
