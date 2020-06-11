@@ -24,7 +24,7 @@ router.get('/image/:filename', function(req,res) {
 router.get('/prediction/:id', function(req,res){
   var dataToSend;
   const python = spawn('python3', ['/Users/NicolasServot/Desktop/Hackathon/CodevWeb/SimpleHTR/src/main.py', '/Users/NicolasServot/Desktop/Hackathon/CodevWeb/SimpleHTR/src/test1.png']);
-  const python2 = spawn('python3', ['/home/hugo/Documents/ML/Project/CodevWeb/SimpleHTR/src/main.py']);
+  const python2 = spawn('python3', ['/home/hugo/Documents/ML/Project/CodevWeb/SimpleHTR/src/main.py', '/home/hugo/Documents/ML/Project/CodevWeb/SimpleHTR/src/test1.png']);
   python2.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');
     dataToSend = data.toString();
