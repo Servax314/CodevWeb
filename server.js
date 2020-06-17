@@ -22,7 +22,6 @@ conn.once('open', () => {
   gfs = Grid(conn.db);
   gfs.collection('uploads');
   module.exports = gfs;
-  console.log(gfs.files);
 });
 
 
