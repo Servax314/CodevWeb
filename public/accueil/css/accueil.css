@@ -1,17 +1,11 @@
 
-body
-{
-    display: flex;
-    flex-direction: column;
-}
-
 
 body{
     background: url(background2.svg);
 
 }
 h2{
-    justify-content: center;
+    text-align: center;
 }
 
 .container{
@@ -44,49 +38,111 @@ h2{
     height: 40vh;
     display: flex;
   align-items: center;
-  
+  justify-content: center;
   flex-direction: column;
 
+ }
+
+#website{
+    margin: auto;
+    width:80%;
+    height: 40vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+ }
+
+ form{
+  margin: auto;
+   
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
  }
 
  #removeButton{
 
  }
 
- #removeButton,
-      #removeButton::after {
+ #submit,
+      #submit::after {
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s;
       }
-      #removeButton {
-        
+      #submit {
+      width :50%;
       background: none;
       border: 2px solid #000;
       border-radius: 4px;
       color: #000;
       text-transform: uppercase;
       }
-      #removeButton::before,
-      #removeButton::after {
+      #submit::before,
+      #submit::after {
       background: #000;
       content: '';
       position: absolute;
       z-index: -1;
       }
-      #removeButton:hover {
+      #submit:hover {
       color: #000; 
       border: 2px solid #E87D3C;
       background-color: #E87D3C;
       }
       
-      #removeButton::after {
+      #submit::after {
       left: 0;
       top: 0;
       width: 0;
       }
-      #removeButton:hover:after {
+      #submit:hover:after {
+      }
+
+      #logo{
+        height:100%;
+        width:100%;
+
+}
+
+#download,
+      #download::after {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      }
+      #download {
+      width :25%;
+      background: none;
+      border: 2px solid #000;
+      border-radius: 4px;
+      color: #000;
+      text-transform: uppercase;
+      }
+      #download::before,
+      #download::after {
+      background: #000;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      }
+      #download:hover {
+      color: #000; 
+      border: 2px solid #E87D3C;
+      background-color: #E87D3C;
+      }
+      
+      #download::after {
+      left: 0;
+      top: 0;
+      width: 0;
+      }
+      #download:hover:after {
       }
 
 #user_function{
