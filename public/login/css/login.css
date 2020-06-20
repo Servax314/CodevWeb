@@ -1,12 +1,52 @@
-p,input,button{
-	font-family: "Prompt";
-	font-size:15px;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 10px 10px;
+	margin: 2px 0;
+	width: 100%;
+}
+
+input[type=text]:focus, 
+input[type=password]:focus{
+
+	border: 2px solid #E87D3C;
 
 }
 
-@font-face {
-	font-family: "Prompt";
-	src: url('/police/prompt/Prompt-Regular.ttf');
+button {
+	border-radius: 10px;
+	border: 1px solid #E87D3C;
+	background-color: #E87D3C;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px 25px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:hover {
+	transform: scale(0.98);
+}
+
+button:active {
+	transform: scale(0.93);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
 }
 
 .loginBox{
@@ -107,87 +147,7 @@ p,input,button{
 
 }
 
-button,
-      button::after {
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-      }
-      button {
-      	
-      background: none;
-      border: 2px solid #000;
-      border-radius: 4px;
-      color: #000;
-      text-transform: uppercase;
-      }
-      button::before,
-      button::after {
-      background: #000;
-      content: '';
-      position: absolute;
-      z-index: -1;
-      }
-      button:hover {
-      color: #000; 
-      border: 2px solid #E87D3C;
-      background-color: #E87D3C;
-      }
-      
-      #loginButton::after {
-      left: 0;
-      top: 0;
-      width: 0;
-      }
-      #loginButton:hover:after {
-      }
 
 
 
 
-
-.form-style-8 input[type=text], 
-.form-style-8 input[type=password]{
-	border-radius: 1px;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 3px;							
-	-webkit-transition: all 0.10s ease-in-out;
-	-moz-transition: all 0.10s ease-in-out;
-	-ms-transition: all 0.10s ease-in-out;
-	-o-transition: all 0.10s ease-in-out;
-	outline: none;	
-}
-
-.form-style-8 input[type=password]{
-	margin-bottom: 25px;
-}
-
-.form-style-8 input[type=text]:hover, 
-.form-style-8 input[type=password]:hover{
-	-moz-box-shadow: 0 0 8px #E87D3C;
-	-webkit-box-shadow: 0 0 8px #E87D3C;
-	box-shadow: 0 0 8px #E87D3C;
-	border: 2px solid #E87D3C;
-}
-
-.form-style-8 input[type=text]:focus, 
-.form-style-8 input[type=password]:focus{
-	-moz-box-shadow: 0 0 8px #E87D3C;
-	-webkit-box-shadow: 0 0 8px #E87D3C;
-	box-shadow: 0 0 8px #E87D3C;
-	border: 2px solid #E87D3C;
-}
-
-.form-style-8 input[type=text],
-.form-style-8 input[type=text]::after,
-.form-style-8 input[type=password],
-.form-style-8 input[type=password]::after
-{
-      -webkit-transition: all 0.2s;
-      -moz-transition: all 0.2s;
-      -o-transition: all 0.2s;
-      transition: all 0.2s;
-      }
