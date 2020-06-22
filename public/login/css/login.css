@@ -12,12 +12,7 @@ input {
 	width: 100%;
 }
 
-input[type=text]:focus, 
-input[type=password]:focus{
 
-	border: 2px solid #E87D3C;
-
-}
 
 button {
 	border-radius: 10px;

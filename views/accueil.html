@@ -6,48 +6,42 @@
     <link rel="stylesheet" href="/accueil/css/accueil.css">
     <link rel="stylesheet" href="entourloupe.css">
     <link rel="stylesheet" href="/accueil/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+    
 
     </head>
 
 
-    <body id="particles-js">
+<body>
+<div class="container" >
+  <img id="logo" src="../public/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
+  <div class="boxstyle" id ="user_Box">
+    <section>
+      <div>
+        <h2 id="title1">Upload your handwritten file here:</h2>
+        <p>Convert your handwritten documents to Word file with incredible assurancy</p>
+      </div>
 
-        <div class="container" >
-                <div class="boxstyle" id ="user_Box">
-                    <img id="logo" src="../public/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
-                    <section>
-                        <div>
-                            <h2>Upload your handwritten file here:</h2>
-                            <p>Convert your handwritten documents to Word file with incredible assurancy </br> 
-                        </div>
+      <div class="download">
+        <form action="/upload" method = "POST" enctype="multipart/form-data">
+          <div id="uploadBloc">
+            <input type="file" id="file" name="file" >
+            <label id="chooseFile" for="file">Choose File</label>
+             <img id="upload" src="../public/upload_image.png"  />
+          </div>
+          <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
 
-                        <div class="download">
-                          <form action="/upload" method = "POST" enctype="multipart/form-data">
-                          <div class="custom-file mb-3">
-                              <input type="file" id="file" name="file" class="custom-file-input">
-                              <label id="chooseFile" for="file" class="custom-file-label">Choose File</label>
-                              </div>
-                      <!-- <div class="rouge2"> -->
-                              <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
-                         <!-- </div> -->
-                        </form>
-                        <div>
-                    </section>
-                    <h2> Download the conversion here : </h2>
+        </form>
+      </div>
+    </section>
 
-                    <input type="button" id="download" value="Download" onclick="window.location.href='download.jpg.zip'"></input>
+    <div id="download">
+      <h2 id="title2"> Download the conversion here : </h2>
+      <input type="button" id="downloadButton" value="Download" onclick="window.location.href='download.jpg.zip'"></input>
+    </div>
 
-                   
+  </div>  
 
-
-        
-
-               
-            </div>
-            
-            </div>
-        </div>
-    </body>
+  
+</div>
+</body>
 </html>
