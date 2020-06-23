@@ -20,6 +20,27 @@ p{
 
 section{
   position:absolute;
+  margin-top:-7px;
+
+}
+
+#nav{
+  position : absolute;
+  top : 4px;
+  right: 4px;
+  display:flex;
+  flex-direction:column;
+
+}
+
+#disconnectButton{
+  height:37px;
+  width:37px;
+}
+
+#statButton{
+  height:40px;
+  width:40px;
 
 }
 
@@ -28,7 +49,7 @@ section{
 }
 
 #download{
-  top: 52%;
+  top: 51%;
   position :absolute;
   display: flex;
   flex-direction: column;
@@ -46,6 +67,7 @@ section{
   padding: 3px;
   align-items: center;
   justify-content: space-between;
+
 }
 
 #uploadBloc{
@@ -114,6 +136,7 @@ section{
   transition: transform 80ms ease-in;
   width: 30%;
   cursor: pointer;
+  margin-top:10px;
 }
 
 #downloadButton:hover {
@@ -141,8 +164,8 @@ section{
 
 #user_Box{
 
-    width:80vh;
-    height: 60vh;
+    width:75vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,7 +190,7 @@ section{
     position: absolute;
     height:30vh;
     width:30vh;
-    top:5px;
+    top:50px;
 }
 
 
@@ -182,8 +205,7 @@ section{
       transition: all 0.2s;
     border-radius: 4px;
     box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
-    background: linear-gradient(to bottom, 
-     white 50%, #E87D3C 50%);
+    background: linear-gradient(to bottom, white 50%, #E87D3C 50%);
 }
 
     

@@ -12,7 +12,13 @@
 
 
 <body>
+  <div id="nav">
+    <a class="link" id="loginLink" href="login.html"><img id="disconnectButton" src="../public/disconnectButton.png"/></a>
+    <a class="link" id="statLink" href=""><img id="statButton" src="../public/statButton.png"/></a>
+  </div>
+
 <div class="container" >
+
   <img id="logo" src="../public/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
   <div class="boxstyle" id ="user_Box">
     <section>
@@ -23,10 +29,10 @@
 
       <div class="download">
         <form action="/upload" method = "POST" enctype="multipart/form-data">
-          <div id="uploadBloc">
+          <div id="uploadBloc" for="file">
             <input type="file" id="file" name="file" >
             <label id="chooseFile" for="file">Choose File</label>
-             <img id="upload" src="../public/upload_image.png"  />
+             <img for="file" id="upload" src="../public/upload_image.png"  />
           </div>
           <input type='submit' id ="submit" value="Submit" class="btn btn-primary btn-block">
 
