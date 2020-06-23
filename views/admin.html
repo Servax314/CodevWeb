@@ -4,93 +4,43 @@
         <meta charset="utf-8" />
         <title>Machina</title>
         <link rel="stylesheet" href="/admin/css/admin.css">
+        <link rel="stylesheet" href="untitled.css">
     </head>
 
 
     <body>
+  <div id="nav">
+    <a class="link" id="loginLink" href="login.html"><img id="disconnectButton" src="../public/disconnectButton.png"/></a>
+    <a class="link" id="statLink" href=""><img id="statButton" src="../public/statButton.png"/></a>
+    <a class="link" id="searchLink" href="accueil.html"><img id="searchButton" src="../public/searchButton.png"/></a>
+  </div>
 
-        <div class="container" >
-            <div class="leftcontainer">
-                <div class="boxstyle" id ="user_Box">
+<div class="container" >
 
-                    <h1> Users Management </h1>
+  <img id="logo" src="../public/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
+  <div class="boxstyle" id ="user_Box">
+    <section>
+      <div>
+        <h2 id="title1">Users management :</h2>
+        
+      </div>
 
-                    <div id="user_function">
-                        <div id="user_management">
-                            <p> lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                            </p>
-                        </div>
+      <div class="download">
+        <form action="/upload" method = "POST" enctype="multipart/form-data">
+          
+        </form>
+      </div>
+    </section>
 
-                        <div id="user_removal">
-                            <p> Select the user to remove : </p>
-                            <select id="remove_user_select">
-
-                            </select>
-                            <button id="removeButton" name="removeButton" onclick = ''>Remove</button>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="boxstyle" id ="website">
-                    <h1> Website Management </h1>
-
-                    <div id="website_function">
-                        <div id="website_management">
-                            <p> lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                            </p>
-                        </div>
-
-                        <div id="website_removal">
-                            <p> lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                                lalalalalalalalalalallalala</br>
-                            </p>
-
-                        </div>
-
-                    </div>
+    <div id="download">
+      
 
 
-                </div>
-            </div>
-            <div class="rigthcontainer">
-                <div class="boxstyle" id ="myAccountBox">
+    </div>
 
-                </div>
-                <div class="boxstyle" id ="navigationBox">
-                    <button class="navCase" id ="navigation1">
-                        Research
-                    </button>
-                    <div class="navCase" id ="navigation2">
-                        The method
-                    </div>
-                    <div class="navCase" id ="navigation3">
-                        Photos
-                    </div>
-                    <div class="navCase" id ="navigation4">
-                        The team
-                    </div>
-                    <div class="navCase" id ="navigation5">
-                        Fun facts
-                    </div>
-                    <div class="navCase" id ="navigation6">
-                        Fun animation
-                </div>
-            </div>
-        </div>
-    </body>
+  </div>  
+
+  
+</div>
+</body>
 </html>
