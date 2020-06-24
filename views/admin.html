@@ -21,12 +21,14 @@
   <div class="boxstyle" id ="user_Box">
     <section>
       <div>
-        <h2 id="title1">Users management :</h2>
-          <div>
-            <h1> Users Ban :</h1>
+        <h1 id="title1">Users management :</h1>
+          <div id="banBox">
+            <h3> Users Ban :</h3>
+            <div>
             <input placeholder="Mail Address "  id="mailBan" name="mailBan" type="text" autocapitalize="off" autocorrect="off"/>
             <input placeholder="Reason "  id="reasonBan" name="reasonBan" type="text" autocapitalize="off" autocorrect="off"/>
-            <button id="validate" name="validateButton" onclick = 'funcBan()'>Validate</button>
+            </div>
+            <button id="ban" name="banButton" onclick = 'funcBan()'>Ban</button>
           </div>
 
       </div>
@@ -39,9 +41,14 @@
     </section>
 
     <div id="download">
-
-
-
+      <div id="unbanBox">
+            <h3 id="unbantext"> Users Unban :</h3>
+            <div>
+      <input placeholder="Mail Address "  id="mailunBan" name="mailunBan" type="text" autocapitalize="off" autocorrect="off"/>
+      <input placeholder="Reason "  id="reasonunBan" name="reasonunBan" type="text" autocapitalize="off" autocorrect="off"/>
+      </div>
+      <button id="unban" name="unbanButton" onclick = ''>Unban</button>
+      </div>
     </div>
 
   </div>

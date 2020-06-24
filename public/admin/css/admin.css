@@ -24,6 +24,75 @@ section{
 
 }
 
+input {
+  background-color: #eee;
+  border: none;
+  padding: 10px 10px;
+  margin: 2px 0;
+  width: 40%;
+}
+
+#banBox{
+  margin-top:-8%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+#unbanBox{
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+#ban {
+  margin-top: 5%;
+  border-radius: 10px;
+  border: 1px solid #E87D3C;
+  background-color: #E87D3C;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+#unbantext{
+  color:#FFFFFF;
+}
+
+#unban {
+  margin-top: 5%;
+  border-radius: 10px;
+  border: 1px solid #E87D3C;
+  background-color: #FFFFFF;
+  color: #E87D3C;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+#ban:hover {
+  transform: scale(0.98);
+}
+
+#ban:active {
+  transform: scale(0.93);
+}
+
+#ban:focus {
+  outline: none;
+}
 #nav{
   position : absolute;
   top : 4px;
