@@ -17,7 +17,7 @@ function funcFetch() {
     .then(function(res){
       console.log(fetchData);
       console.log(res);
-      if(res.url === "http://localhost:3000/") {
+      if(res.url === "http://localhost/9000") {
         alert('Logging in, welcome to the moula side.');
         window.location.replace(res.url);
       }else{

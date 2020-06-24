@@ -13,7 +13,13 @@ module.exports = {
       return res.redirect('/')
     }
     next()
+  },
+
+  checkAdmin: function(req,res,next) {
+    console.log(req)
+    if(req.isAuthenticated() && req.admin) {
+      return next();
+    }
+    res.redirect('/');
   }
-
-
 };
