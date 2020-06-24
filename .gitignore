@@ -8,5 +8,6 @@
 ehthumbs.db
 Thumbs.db
 .DS_Store
-gcp-keys.json
+Codev-d37eccf95d58.json
 /config/keys.js
+/fileUpload
