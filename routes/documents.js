@@ -4,16 +4,30 @@ var mongoose = require("mongoose");
 const {spawn} = require('child_process');
 const path = require('path');
 var fs = require('fs');
-const {checkAuthenticated} = require('../config/auth.js');
-
+const {checkAuthenticated, checkAdmin} = require('../config/auth.js');
 const upload = require('../config/storageGF.js');
+
+const vision = require('@google-cloud/vision');
 
 //upload handwritten document to db
 router.post('/upload',checkAuthenticated, upload.single('file'), function(req,res){
-  res.redirect('/prediction/80723457892345789234578901345')
+  
+  console.log(req.file)
+  const clientOptions = {apiEndpoint: 'eu-vision.googleapis.com'};
+  const client = new vision.ImageAnnotatorClient();
+  const result = client.documentTextDetection(
+    'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/126259992/original/d377377b6758a398b9ab6cbe1d27fd536acfcca8/convert-any-handwritten-english-or-hindi-text-to-word-or-excel.jpg'
+  )
+    .then(result => {
+      console.log(result)
+      const fullTextAnnotation = result[0].fullTextAnnotation;
+      console.log(fullTextAnnotation.text);
+    });
+
+
 });
 
-router.get('/image/:filename', function(req,res) {
+router.get('/image/:filename', checkAdmin, function(req,res) {
   const gfs = require('../server.js');
   gfs.files.findOne({filename: req.params.filename}, (err, file) => {
     const readStream = gfs.createReadStream(file.filename);
@@ -23,25 +37,7 @@ router.get('/image/:filename', function(req,res) {
 
 //download numerical document
 router.get('/prediction/:id',checkAuthenticated, function(req,res){
-  var dataToSend='hello';
-  const python = spawn('python3', ['/Users/NicolasServot/Desktop/Hackathon/CodevWeb/SimpleHTR/src/main.py', '/Users/NicolasServot/Desktop/Hackathon/CodevWeb/SimpleHTR/src/test1.png']);
-  const python2 = spawn('python3', ['/home/hugo/Documents/ML/Project/CodevWeb/SimpleHTR/src/main.py', '/home/hugo/Documents/ML/Project/CodevWeb/SimpleHTR/src/test1.png']);
-  python2.stdout.on('data', function (data) {
-    console.log('Pipe data from python script ...');
-    dataToSend = data.toString();
-  });
-  python2.on('close', (code) => {
-    console.log(`child process closed`);
-    fs.appendFile('log.txt', dataToSend, function (err) {
-  if (err) {
-    next();
-  } else {
-    // done
-  }
-})
-    res.send(dataToSend)
-    //console.log(res)
-  });
+
 });
 
 module.exports = router;
