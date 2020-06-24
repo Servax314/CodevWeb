@@ -4,78 +4,43 @@
         <meta charset="utf-8" />
         <title>Machina</title>
         <link rel="stylesheet" href="/admin/css/admin.css">
+        <link rel="stylesheet" href="untitled.css">
     </head>
 
 
     <body>
+  <div id="nav">
+    <a class="link" id="loginLink" href="login.html"><img id="disconnectButton" src="../public/disconnectButton.png"/></a>
+    <a class="link" id="statLink" href=""><img id="statButton" src="../public/statButton.png"/></a>
+    <a class="link" id="searchLink" href="accueil.html"><img id="searchButton" src="../public/searchButton.png"/></a>
+  </div>
 
-        <div class="container" >
-            <div class="leftcontainer">
-                <div class="boxstyle" id ="user_Box">
+<div class="container" >
 
-                    <h1> Users Management </h1>
+  <img id="logo" src="../public/machina_logo.png" alt="Machina_Logo" title="Machina, a Machine Learning application, made by machines, for machines"  />
+  <div class="boxstyle" id ="user_Box">
+    <section>
+      <div>
+        <h2 id="title1">Users management :</h2>
 
-                    <div id="user_function">
-                        <div id="user_management">
-                            <p> Remove a user by name, that user will have to register again with his/her imt mail address.
-                            </p>
-                        </div>
+      </div>
 
-                        <div id="user_removal">
-                            <p> Select the user to remove : </p>
-                            <select id="remove_user_select">
+      <div class="download">
+        <form action="/upload" method = "POST" enctype="multipart/form-data">
 
-                            </select>
-                            <button id="removeButton" name="removeButton" onclick = ''>Remove</button>
-                        </div>
+        </form>
+      </div>
+    </section>
 
-                    </div>
-
-                </div>
-                <div class="boxstyle" id ="website">
-                    <h1> Website Management </h1>
-
-                    <div id="website_function">
-                        <div id="website_management">
-                            <p> Number of users : 21
-                            </p>
-                        </div>
-
-                        <div id="website_removal">
-                            <p> Number of admin : 4
-                            </p>
-
-                        </div>
-
-                    </div>
+    <div id="download">
 
 
-                </div>
-            </div>
-            <div class="rigthcontainer">
-                <div class="boxstyle" id ="myAccountBox">
 
-                </div>
-                <div class="boxstyle" id ="navigationBox">
-                    <button class="navCase" id ="navigation1">
-                        Research
-                    </button>
-                    <div class="navCase" id ="navigation2">
-                        The method
-                    </div>
-                    <div class="navCase" id ="navigation3">
-                        Photos
-                    </div>
-                    <div class="navCase" id ="navigation4">
-                        The team
-                    </div>
-                    <div class="navCase" id ="navigation5">
-                        Fun facts
-                    </div>
-                    <div class="navCase" id ="navigation6">
-                        Fun animation
-                </div>
-            </div>
-        </div>
-    </body>
+    </div>
+
+  </div>
+
+
+</div>
+</body>
 </html>
