@@ -18,7 +18,6 @@ module.exports = {
   },
 
   checkAdmin: function(req,res,next) {
-    console.log(req)
     if(req.isAuthenticated() && req.user.admin) {
       return next();
     }

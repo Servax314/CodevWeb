@@ -21,7 +21,7 @@ function funcBan() {
   function funcUnban() {
     url = '/admin/unban';
     let data = {
-      email: document.getElementById("mailUnan").value
+      email: document.getElementById("mailUnban").value
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
