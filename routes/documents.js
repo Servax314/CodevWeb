@@ -7,15 +7,15 @@ var fs = require('fs');
 const multer = require("multer");
 const {checkAuthenticated, checkAdmin} = require('../config/auth.js');
 const upload = require('../config/storageGF.js');
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve('abc/'))
+    cb(null, path.resolve('fileUpload/'))
   },
   filename: function (req, file, cb) {
     cb(null, Date.now()+"." + file.originalname.split('.')[file.originalname.split('.').length -1])
   }
 })
-
 const uploadLocal = multer({ storage: storage })
 
 
@@ -24,7 +24,7 @@ const vision = require('@google-cloud/vision');
 //upload handwritten document to db
 router.post('/upload',checkAuthenticated,  uploadLocal.single('file'), function(req,res){
   console.log(req.file.filename)
-  filePath = path.resolve('abc/' + req.file.filename)
+  filePath = path.resolve('fileUpload/' + req.file.filename)
   const clientOptions = {apiEndpoint: 'eu-vision.googleapis.com'};
   const client = new vision.ImageAnnotatorClient();
   const result = client.documentTextDetection(filePath)
