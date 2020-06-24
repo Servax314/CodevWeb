@@ -3,6 +3,7 @@ const router = express.Router();
 var mongoose = require("mongoose");
 const {spawn} = require('child_process');
 const path = require('path');
+const fs = require('fs');
 const fse = require('fs-extra');
 const multer = require("multer");
 const {checkAuthenticated, checkAdmin} = require('../config/auth.js');
@@ -23,23 +24,28 @@ const vision = require('@google-cloud/vision');
 
 //upload handwritten document to db
 router.post('/upload',checkAuthenticated,  uploadLocal.single('file'), function(req,res){
-  const fileName = req.file.filename
-  filePath = path.resolve('fileUpload/' + fileName)
+  const fileName = req.file.filename;
+  const fileOriginalName = req.file.originalname;
+  filePath = path.resolve('fileUpload/' + fileName);
   const clientOptions = {apiEndpoint: 'eu-vision.googleapis.com'};
   const client = new vision.ImageAnnotatorClient();
   const result = client.documentTextDetection(filePath)
     .then(result => {
       const fullTextAnnotation = result[0].fullTextAnnotation;
-      fse.outputFile(path.resolve('textDownload/'+fileName.split('.')[fileName.split('.').length -2]+'.txt'), fullTextAnnotation.text, err => {
+      const textFileOriginalName = fileOriginalName.split('.')[fileName.split('.').length -2]+'.txt';
+      const textFilePath = path.resolve('textDownload/'+fileName.split('.')[fileName.split('.').length -2]+'.txt')
+      fse.outputFile(textFilePath, fullTextAnnotation.text, err => {
           if(err) {
-            console.log(err);
+            next(err);
           } else {
-            console.log('The file was saved!');
+            res.writeHead(200, {
+                "Content-Type": "text/plain",
+                "Content-Disposition": "attachment; filename=" + textFileOriginalName
+              });
+            fs.createReadStream(textFilePath).pipe(res);
           }
-        });
+      });
     });
-
-
 });
 
 
