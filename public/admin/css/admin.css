@@ -32,6 +32,14 @@ input {
   width: 40%;
 }
 
+button,a{
+  cursor: pointer;
+}
+
+#mailUnban{
+  width:80%;
+}
+
 #banBox{
   margin-top:-8%;
   display: flex;
