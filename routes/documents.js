@@ -3,7 +3,7 @@ const router = express.Router();
 var mongoose = require("mongoose");
 const {spawn} = require('child_process');
 const path = require('path');
-const fs = require('fs');
+const fse = require('fs-extra');
 const multer = require("multer");
 const {checkAuthenticated, checkAdmin} = require('../config/auth.js');
 const upload = require('../config/storageGF.js');
@@ -30,8 +30,15 @@ router.post('/upload',checkAuthenticated,  uploadLocal.single('file'), function(
   const result = client.documentTextDetection(filePath)
     .then(result => {
       const fullTextAnnotation = result[0].fullTextAnnotation;
-      console.log(`Full text: ${fullTextAnnotation.text}`);
+      fse.outputFile(path.resolve('textDownload/'+fileName.split('.')[fileName.split('.').length -2]+'.txt'), fullTextAnnotation.text, err => {
+          if(err) {
+            console.log(err);
+          } else {
+            console.log('The file was saved!');
+          }
+        });
     });
+
 
 });
 
