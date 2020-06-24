@@ -2,7 +2,7 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
-  background: url(../public/background.svg);
+  background: url(/background.svg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +39,12 @@ section{
 }
 
 #statButton{
+  height:40px;
+  width:40px;
+
+}
+
+#searchButton{
   height:40px;
   width:40px;
 
@@ -190,7 +196,7 @@ section{
     position: absolute;
     height:30vh;
     width:30vh;
-    top:50px;
+    top:40px;
 }
 
 
