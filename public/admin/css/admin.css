@@ -36,6 +36,23 @@ button,a{
   cursor: pointer;
 }
 
+#userCounter{
+
+  position : absolute;
+  top : 49%;
+  right: 20px;
+  transition: transform 80ms ease-in;
+}
+
+#userCounter:hover{
+  transform:scale(2);
+}
+
+#usercounterlogo{
+  width:20%;
+  height:20%;
+}
+
 #mailUnban{
   width:80%;
 }
@@ -91,16 +108,29 @@ button,a{
 }
 
 #ban:hover {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
 #ban:active {
-  transform: scale(0.93);
+  transform: scale(0.90);
 }
 
 #ban:focus {
   outline: none;
 }
+
+#unban:hover {
+  transform: scale(0.95);
+}
+
+#unban:active {
+  transform: scale(0.90);
+}
+
+#unban:focus {
+  outline: none;
+}
+
 #nav{
   position : absolute;
   top : 4px;
