@@ -15,7 +15,7 @@ router.post('/admin/ban', checkAdmin, function (req,res){
     var message = "";
     User.findOne({email: req.body.email})
       .then(user=>{
-        if(user){
+        if(user){   //boucle non instanciée?
           user.remove();
           message = "User removed from the database."
         };

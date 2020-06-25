@@ -13,7 +13,7 @@ function funcBan() {
       };
   fetch(url,fetchData)
     .then(function(res){
-      alert("User indefinitely banned.");
+      alert("User indefinitely banned."); 
       window.location.replace(res.url);
     })
   }
