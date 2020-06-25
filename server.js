@@ -64,13 +64,8 @@ app.use('/', require('./routes/admin.js'));
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    console.log(err);
-
-
-    res.json({
-        message: err.message,
-        error: err
-    });
+    res.statusText = err.message;
+    res.end();
 });
 
 const PORT = process.env.PORT || 9000;

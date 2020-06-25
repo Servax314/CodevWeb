@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "codev-281316",
+  "private_key_id": "d37eccf95d581bcdf1ae5d5700d7ab9ee3f54f60",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdzeG+MQ/1UaFc\nHCqK7M2r+OZtzi6tvCmKFfO4cq19IOjKotycQ5Gidpl8oSqW2VEvx8jKsxIQ1CGI\nCEy6/gk9ZtDy/z6QdSuubBs+fJBEjuixFEtO4qDMg7thurJRl159RxGI+gF6YF/a\nDmTRxD5M3FLXJlPFNTIeFoAhmYUObGaAI8iR1+k85JG0MMjeS+2W/6lB+kT9NxvQ\nhalhW3iPlLKZDuthM7j4Rce7H5N7E07w3ONidgxzHBehyCQia921fn5rj6qEisLt\nKLvYo8uTQEjnaSLt8PG/7iURkatJ2iwK3FNPGthZuAQzbpK2riOxwyRSGYDMuFmi\nakDtY5aLAgMBAAECggEAMmjr9a1Hm0bl5H5M6s9Fzmt29NnaGH7UyDtF/YSIvkGu\ni9jl33dIRR1c366+Y6ztXfWUw4fbvAt/4KxCErQHMJmxIwb9rfj4KMJ5G4eAMJ50\nX+kLO5py4pIsYEZbI2xW728t/1NZ+IVj6U0S0N2/Rx9UyU0BkqxxI6JtcQ5RLm9a\ng0vjCcVgEwzCcnJMe9DoZBGgVAkThGFMU5MHLB+klEOpDd6MfKagg9emZILFGu2A\n3jqSb+VoHo2pof5zlu8S6ZUqjYl36XQmC7JeW/ZOuGUh4jHPvlfI2DijoPW0QwMm\nIWNcyT9iQsVarhzariPNamK/5+tB0XDtR3aphOAf2QKBgQDcZnnL3fDXv7nzZP/n\nowgbfG2A8xUk31vcN3JpVZXoVyBlRO0gjwCHOuQY8XU+ivQ1Kted1qRlCSjqTaD2\nvDRmLxOPkLKL+dRt4KHFz8XG4fY/aMhAGs4aSb27Y6Pv3h1525PzngXCyy+VhxQk\nKqoc3P8WJcaa7/DnM299aVecaQKBgQC3SxEFxiXcdPUXGGgF4jWgp2amwAxdVKic\nD9E6Xs1mKD/Nn/Ney9PpU2MPyN/p4p7TMlM0e3pk/28mEcjLU2O9iOYnPGTvy4a0\nO9zq14mOnCxWgLeR3f6HOKO2eGJV/7c6daYmAS+mRg5Uc100ObPzYuDGg8n4ulRo\nuc240/rM0wKBgQCUlyIWKBNv4XrkdXtyF6Anp8PL5BalPVEZLuiby2+9rL/Shp24\nDbE1eqa9ikyZVeU+0xt69nLvCzXigWO79Tb+jU6Kw+scI9rsGT33txSH+V+jcGlR\njsDVSFH6PDsSRJVqynb9D9Sid4olLWSO3ZTC0NvJer5jRtELjsnjq1m9wQKBgEoa\nj0dGVQhMQMqVk3jNe+D3zQidnGIfWAvAWVa//UrP+vunLz2kKoiqreIz1FM6y/uW\n3Qza3yD2JHm/tu59SFXYgzRZtnU8U7mKekZ33aVKfqJ6Z70Rg1YoEAg1o4whVnLM\nHeA/moQezqxV99ile5tq3nVj0sQ8kOPGOuX+zecBAoGBAKG/9utlxcqAxlwNPVk6\n9/KxXThqlkU9RxMyXF1blnFdAO6Hxq/G9j8KtlkgRf//WydFh6KCEi9KzVmsqJ8b\nqLs/RWdQLAlo83p6T5pzEOcNuS0zTu2bS2YZLRPMIHEeKEXpmSCr/GUmSBnZQ/Wd\nRKJk2uQPqh96z+zWUOs1ExMq\n-----END PRIVATE KEY-----\n",
+  "client_email": "projet-codev@codev-281316.iam.gserviceaccount.com",
+  "client_id": "116349909883187757254",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/projet-codev%40codev-281316.iam.gserviceaccount.com"
+}
