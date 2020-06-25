@@ -25,11 +25,8 @@ function postRegister() {
         alert('User registered !')
         window.location.replace(res.url);
       }else{
-        res.json()
-          .then(function(obj) {
-            alert(obj.message);
-            window.location.replace(res.url);
-          });
+        alert("Error" + res.status + " : "+ res.statusText);
+        window.location.replace(res.url);
       }
     })
     .catch(err => console.log(err));

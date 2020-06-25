@@ -15,10 +15,11 @@ function funcFetch() {
       };
   fetch(url,fetchData)
     .then(function(res){
-      if(res.url === "http://localhost/9000") {
-        alert('Logging in, welcome to the moula side.');
+      if(res.url === "http://localhost:9000/") {
+        console.table(res,res.url);
         window.location.replace(res.url);
       }else{
+        console.table(res);
         alert('Failed to log in, wrong password/username.');
         window.location.replace(res.url);
       }

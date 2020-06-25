@@ -13,7 +13,7 @@ function funcBan() {
       };
   fetch(url,fetchData)
     .then(function(res){
-      alert('User successfully banned');
+      alert("User indefinitely banned.");
       window.location.replace(res.url);
     })
   }
@@ -32,8 +32,14 @@ function funcBan() {
         };
     fetch(url,fetchData)
       .then(function(res){
-        alert('Fix that message');
-        window.location.replace(res.url);
+        if(res.url ==200){
+          alert("User removed from the ban list.");
+          window.location.replace(res.url);
+        }else{
+          alert(res.status+" : No such user in the ban list.");
+          window.location.replace(res.url);
+        }
+
       })
     }
 
