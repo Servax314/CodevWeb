@@ -20,4 +20,4 @@ Paul Michel worked on the frontend of the website on the view .html and .css.
 
 Nicolas Servot designed the backend using nodeJS, Express and MongoDB. I also wrote the .js files for the frontend.
 
-All 4 of us are 3rd year IMT Atlantique student. This project is part of our engineering degree. 
+All four of us are 3rd year IMT Atlantique student. This project is part of our engineering degree. 
