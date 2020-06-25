@@ -46,6 +46,12 @@ router.post('/upload',checkAuthenticated,  uploadLocal.single('file'), function(
           }
       });
     });
+    // let command = upload.single('file')
+    // command(req,res, function(err){
+    //   if(err){
+    //     console.log(err);
+    //   }
+    // })
 });
 
 
