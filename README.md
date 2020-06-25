@@ -14,7 +14,7 @@ Finally, while still in the CodevWeb directory, run 'sudo npm start dev' to laun
 
 Hugo Bouchez worked on an implementation of a ML algorithm to detect hanwritten text in an image. The algorithm was written in python using sklearn, a second implementation was written using the Tensorflow framework for python. For now, the algorithm is not integrated to the website, the Google Vision API is used as a placeholder.
 
-Mathieu Pierronne worked on the frontend of the website on the view .html and .css. Outside the scope of programming, Mathieu wrote the specifications and a report on the project.
+Mathieu Pierronne worked on the frontend of the website on the view .html and .css. Outside the scope of programming, Mathieu wrote the specifications and a report on the project : https://github.com/Servax314/Codev-report.
 
 Paul Michel worked on the frontend of the website on the view .html and .css.
 
