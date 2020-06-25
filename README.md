@@ -12,12 +12,12 @@ Finally, while still in the CodevWeb directory, run 'sudo npm start dev' to laun
 
 # The team
 
-Hugo Bouchez : worked on an implementation of a ML algorithm to detect hanwritten text in an image. The algorithm was written in python using sklearn, a second implementation was written using the Tensorflow framework for python. For now, the algorithm is not integrated to the website, the Google Vision API is used as a placeholder.
+Hugo Bouchez worked on an implementation of a ML algorithm to detect hanwritten text in an image. The algorithm was written in python using sklearn, a second implementation was written using the Tensorflow framework for python. For now, the algorithm is not integrated to the website, the Google Vision API is used as a placeholder.
 
-Mathieu Pierronne : worked on the frontend of the website on the view .html and .css. Outside the scope of programming, Mathieu wrote the specifications and a report on the project.
+Mathieu Pierronne worked on the frontend of the website on the view .html and .css. Outside the scope of programming, Mathieu wrote the specifications and a report on the project.
 
-Paul Michel : worked on the frontend of the website on the view .html and .css.
+Paul Michel worked on the frontend of the website on the view .html and .css.
 
-Nicolas Servot : designed the backend using nodeJS, Express and MongoDB. He also wrote the .js files for the frontend.
+Nicolas Servot designed the backend using nodeJS, Express and MongoDB. I also wrote the .js files for the frontend.
 
 All 4 of us are 3rd year IMT Atlantique student. This project is part of our engineering degree. 
