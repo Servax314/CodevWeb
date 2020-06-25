@@ -33,7 +33,7 @@ function funcBan() {
     fetch(url,fetchData)
       .then(function(res){
         if(res.url ==200){
-          alert("User removed from the ban list.");
+          alert("User removed from the ban list."); // to be corrected
           window.location.replace(res.url);
         }else{
           alert(res.status+" : No such user in the ban list.");
