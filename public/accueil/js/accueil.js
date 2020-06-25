@@ -11,5 +11,5 @@ function funcDisconnect() {
   fetch(url,fetchData)
     .then(function(res){
       window.location.replace(res.url);
-    }
+    })
 }
