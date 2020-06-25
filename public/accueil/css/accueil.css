@@ -13,6 +13,7 @@ body{
 
 h2{
     text-align: center;
+
 }
 
 p{
@@ -22,7 +23,12 @@ p{
 
 section{
   position:absolute;
-  margin-top:-7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center; 
+
 
 }
 
@@ -73,6 +79,7 @@ section{
 }
 
 #uploadBloc{
+  cursor: pointer;
 
 }
 
@@ -97,6 +104,7 @@ section{
     opacity:0.8;
     background-color: none;
     display: inline-block;
+    cursor:pointer;
 
 }
 
@@ -116,12 +124,16 @@ section{
   cursor: pointer;
 }
 
+#submit{
+  cursor: pointer;
+}
+
 #submit:hover {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
 #submit:active {
-  transform: scale(0.93);
+  transform: scale(0.90);
 }
 
 
@@ -209,7 +221,8 @@ section{
       transition: all 0.2s;
     border-radius: 4px;
     box-shadow: 0px 0px 7px rgba(100,100,100,0.45);
-    background: white;
+    background: linear-gradient(to right,#E87D3C 15%, white 15% 85%, #E87D3C 85%);
+    border-radius: 15px;
 }
 
     
